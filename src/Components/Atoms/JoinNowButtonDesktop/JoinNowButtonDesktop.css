@@ -1,0 +1,24 @@
+.join-now-button-Desktop{
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: .025em;
+    padding: 10px;
+    text-align: center;
+    line-height: 1;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #c33991;
+    border: 1px solid #c33991;
+    margin-left: 20px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.join-now-button-Desktop:hover{
+    background-color: #761050;
+}

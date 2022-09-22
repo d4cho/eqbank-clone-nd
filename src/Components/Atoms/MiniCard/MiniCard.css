@@ -1,0 +1,64 @@
+.card {
+  width: 230px;
+  height: 240px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.high-lighter {
+  background-color: #ffc107;
+  height: 4px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1020px) {
+  .card {
+    display: none;
+  }
+  .high-lighter {
+    display: none;
+  }
+}
+
+.card-content {
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.learn {
+  padding-bottom: 20px;
+  color: #c33991;
+  font-size: 1.14rem;
+  font-family: din-2014, sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+  outline: 0;
+}
+
+.content {
+  margin-top: 0;
+  font-family: din-2014, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 24px;
+  color: inherit;
+}
+
+.header {
+  padding: 0;
+  font-size: 1.3rem;
+}
+
+.learn::after{
+  background-repeat: no-repeat;
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.2rem;
+  vertical-align: middle;
+  background: url('https://www.eqbank.ca/Assets/dist/images/chevron-right.svg') no-repeat;
+
+
+}

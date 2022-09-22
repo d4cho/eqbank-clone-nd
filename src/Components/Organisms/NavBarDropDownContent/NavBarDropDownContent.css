@@ -1,0 +1,62 @@
+.link-drop-down {
+  background: #f8f8f8;
+  box-shadow:  0 3px 5px rgba(0, 0, 0, 0.2) inset;
+  padding-left: 30px;
+  width: 100%;
+  padding-top: 10px;
+  min-height: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.explore-products-title {
+  text-align: center;
+  position: relative;
+  left: -280px;
+  /* margin-left: -690px; */
+}
+
+@media screen and (max-width: 1020px) {
+  .explore-products-title {
+    display: none;
+  }
+  .link-drop-down {
+    display: none;
+  }
+}
+
+.main-content {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  left: -200px;
+  list-style: none;
+  gap: 30px;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.check-div {
+  height: 3px;
+  background-color: #c33991;
+  margin-top: 10px;
+}
+
+.find-out-more {
+  text-align: center;
+  position: relative;
+  left: -280px;
+  font-size: 1.7rem;
+  padding-top: 10px;
+}
+
+.find-out-cards-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px; 
+  height: 300px;
+  margin-top: 40px;
+  position: relative;
+  left: 85px
+}

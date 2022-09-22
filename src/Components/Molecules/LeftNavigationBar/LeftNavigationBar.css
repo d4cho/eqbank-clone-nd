@@ -1,0 +1,136 @@
+@media screen and (min-width: 1020px) {
+  .left-navbar-container {  
+   z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+    .left-navbar-container {
+     display: none;
+    }
+  }
+  .menu-items{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 15px;
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  li{
+    font-family: din-2014,sans-serif;
+    font-weight: 700;
+  }
+ 
+  .align-name-title:hover{
+    color: #c33991;
+    
+  }
+  .align-name-title-no-arrow:hover{
+    color: #c33991;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+.search-button {
+  width: 100%;
+  height: 80px;
+  padding: 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 30px;
+}
+
+
+
+.search-icon {
+  background-image: url('https://www.eqbank.ca/Assets/dist/images/search-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 1.0rem;
+  width: 1.0rem;
+  display: block;
+  height: 100%;
+  background-position: center;
+}
+.search-link:hover{
+    background-color: lightgrey;
+    border-radius: 2px;
+}
+.search-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.align-name-title-no-arrow{
+    border: none;
+    border-bottom: 3px solid #fff;
+    box-sizing: border-box;
+    display: inline-block;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    cursor: pointer;
+} 
+
+.align-name-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+ .arrow-down{
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    background-image: url('https://www.eqbank.ca/Assets/dist/images/gray-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 0.5em;
+    cursor: pointer;
+    transition: all .5s;
+    
+}
+
+.arrow-up{
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  background-image: url('https://www.eqbank.ca/Assets/dist/images/pink-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 0.5em;
+  transition: all .5s;
+  cursor: pointer;
+  rotate: 180deg;
+} 
+
+
+.icon-and-text-holder{
+  display: flex;
+  flex-direction: row;
+}
+
+.active{
+ height: 3px;
+ background-color:  #c33991;
+ margin-top: 26px;
+}
+

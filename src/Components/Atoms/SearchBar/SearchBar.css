@@ -1,0 +1,31 @@
+.search-field {
+  background: 0 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: din-2014, sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid #e4d8d8;
+  font-size: 0.9rem;
+  padding-left: 1.8rem;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 40px;
+  width: 90%;
+}
+.search-field::placeholder {
+  color: #c33991;
+}
+
+@media screen and (max-width: 1020px) {
+  .search-field {
+    display: none;
+  }
+  .search-image{
+    display: none;
+  }
+}
+.search-field:focus{
+  border-bottom: 1px solid  #c33991;
+  outline: none;
+}
+

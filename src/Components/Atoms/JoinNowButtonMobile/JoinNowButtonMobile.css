@@ -1,0 +1,33 @@
+
+.join-now-button{
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: din-2014,sans-serif;
+    display: inline-block;
+    letter-spacing: .025em;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    
+    text-align: center;
+    line-height: 1;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #c33991;
+    border: 1px solid #c33991;
+    margin-right: 10px;
+    ;
+}
+
+
+@media screen and (min-width: 1020px) {
+    .join-now-button {
+    display: none;
+    }
+  }
