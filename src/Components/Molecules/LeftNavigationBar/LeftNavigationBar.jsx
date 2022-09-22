@@ -57,7 +57,6 @@ function LeftNavigationBar() {
                 <a href="#" className="search-link">
                   <span className="search-icon"></span>
                 </a>
-                
               </div>
 
             </li>
