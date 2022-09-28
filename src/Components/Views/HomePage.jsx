@@ -10,7 +10,6 @@ function HomePage() {
       <NavBarContent />
       <SideBarDrawer />
       <div style={{height:'700px', backgroundColor:'lightgrey'}}>Carousel</div>
-      
       <ProductCardContent/>
     </>
   );
