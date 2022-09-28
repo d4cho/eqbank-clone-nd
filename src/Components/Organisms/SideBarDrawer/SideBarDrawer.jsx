@@ -19,7 +19,6 @@ function SideBarDrawer() {
     drawerClass = "side-bar-drawer open";
     backDrop =  <Backdrop backdropHandler={backdropHandler}/>
   }
-  console.log(toggle);
   return (
     <>
       <div className={drawerClass}>

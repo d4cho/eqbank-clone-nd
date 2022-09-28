@@ -8,6 +8,7 @@ import SearchBar from "../../Atoms/SearchBar/SearchBar";
 import { SideBarToggleContext } from "../../../Context/SideBarToggler";
 import NavBarDropdownContent from "../../Molecules/NavBarDropDownContent/NavBarDropDownContent";
 import MiniCardsContent from "../../Molecules/MiniCardsContent/MiniCardsContent";
+import SideBarDrawer from "../SideBarDrawer/SideBarDrawer";
 
 function NavBarContent() {
   const { show, closeShow } = useContext(SearchBarContext);
@@ -113,6 +114,7 @@ function NavBarContent() {
 
       <NavBarDropdownContent />
       <MiniCardsContent />
+      <SideBarDrawer/>
     </>
   );
 }
