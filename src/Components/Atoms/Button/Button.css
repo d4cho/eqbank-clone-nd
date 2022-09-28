@@ -1,5 +1,5 @@
 
-.join-now-button{
+.main-button{
     font-weight: 700;
     font-style: normal;
     font-size: 1.05rem;
@@ -10,9 +10,6 @@
     font-family: din-2014,sans-serif;
     display: inline-block;
     letter-spacing: .025em;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    
     text-align: center;
     line-height: 1;
     -webkit-border-radius: 3px;
@@ -25,9 +22,3 @@
     ;
 }
 
-
-@media screen and (min-width: 1020px) {
-    .join-now-button {
-    display: none;
-    }
-  }

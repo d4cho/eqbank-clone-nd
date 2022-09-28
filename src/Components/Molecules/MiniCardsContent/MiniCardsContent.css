@@ -8,6 +8,11 @@
     position: relative;
     left: 85px
 }
+@media screen and (max-width: 1020px) {
+    .everyday-cards-container{
+        display: none;
+    }
+}
 .investments-cards-container{
     display: flex;
     flex-direction: row;

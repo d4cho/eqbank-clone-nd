@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import "./NavBarContent.css";
-import JoinNowButtonMobile from "../../Atoms/JoinNowButtonMobile/JoinNowButtonMobile";
+import Button from "../../Atoms/Button/Button";
 import LeftNavigationBar from "../../Molecules/LeftNavigationBar/LeftNavigationBar";
 import RightNavigationBar from "../../Molecules/RightNavigationBar/RightNavigationBar";
 import { SearchBarContext } from "../../../Context/SearchBarContext";
 import SearchBar from "../../Atoms/SearchBar/SearchBar";
 import { SideBarToggleContext } from "../../../Context/SideBarToggler";
+import NavBarDropdownContent from "../../Molecules/NavBarDropDownContent/NavBarDropDownContent";
+import MiniCardsContent from "../../Molecules/MiniCardsContent/MiniCardsContent";
 
 function NavBarContent() {
   const { show, closeShow } = useContext(SearchBarContext);
@@ -15,17 +17,22 @@ function NavBarContent() {
       <div className="parent-container">
         <div className="inner-container">
           <div className="join-now-container">
-            <JoinNowButtonMobile paddingTop="10px" paddingBottom="10px" />
-            <a
+            <Button
+              paddingTop="10px"
+              paddingBottom="10px"
+              Label="Join now"
+              paddingLeft="10px"
+              paddingRight="10px"
+            />
+            <span
               onClick={sideBarToggle}
               className={toggle ? "x-button" : "menu-button"}
-              href="#"
             >
               <span
                 className="menu-icon"
                 data-parent-container-toggle-icon=""
               ></span>
-            </a>
+            </span>
           </div>
 
           <div
@@ -38,23 +45,6 @@ function NavBarContent() {
             <RightNavigationBar />
             <LeftNavigationBar />
           </div>
-          {/* 
-          <div className="close-bar-wrapper">
-            <form action="">
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <SearchBar />
-                <button className="Go-button">Go</button>
-                <span className="search-close-button">
-                  <img
-                    onClick={closeShow}
-                    src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
-                    alt=""
-                    srcset=""
-                  />
-                </span>
-              </div>
-            </form>{" "}
-          </div> */}
 
           <a href="/">
             <img
@@ -64,31 +54,10 @@ function NavBarContent() {
             />
           </a>
         </div>
-        {show ? (
-          <div
-            style={show === true ? { display: "block" } : { display: "none" }}
-            className={"search-bar-wrapper"}
-          >
-            <form action="">
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <SearchBar />
-                <span className="search-close-button">
-                  <img
-                    onClick={closeShow}
-                    src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
-                    alt=""
-                    srcset=""
-                  />
-                </span>
-                <button className="Go-button">Go</button>
-              </div>
-            </form>{" "}
-          </div>
-        ) : (
-          <div
-            style={show === false ? { display: "none" } : { display: "block" }}
-            className="close-bar-wrapper"
-          >
+        {/* need one dive hide and then show */}
+
+        {show && (
+          <div className={"search-bar-wrapper"}>
             <form action="">
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <SearchBar />
@@ -105,7 +74,45 @@ function NavBarContent() {
             </form>{" "}
           </div>
         )}
+        {/* {show ? (
+          <div className={"search-bar-wrapper"}>
+            <form action="">
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <SearchBar />
+                <span className="search-close-button">
+                  <img
+                    onClick={closeShow}
+                    src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </span>
+                <button className="Go-button">Go</button>
+              </div>
+            </form>{" "}
+          </div>
+        ) : (
+          <div className="close-bar-wrapper">
+            <form action="">
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <SearchBar />
+                <span className="search-close-button">
+                  <img
+                    onClick={closeShow}
+                    src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </span>
+                <button className="Go-button">Go</button>
+              </div>
+            </form>{" "}
+          </div>
+        )} */}
       </div>
+
+      <NavBarDropdownContent />
+      <MiniCardsContent />
     </>
   );
 }

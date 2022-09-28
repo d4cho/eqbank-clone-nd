@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SideNavigationBar.css";
-import JoinNowButtonMobile from "../../Atoms/JoinNowButtonMobile/JoinNowButtonMobile";
+import Button from "../../Atoms/Button/Button";
 import SocialButton from "../../Atoms/SocialButton/SocialButton";
 
 function SideNavigationBar() {
@@ -55,9 +55,10 @@ function SideNavigationBar() {
               </div>
 
               {personalBankingBar === false && <hr />}
+
               {/* add the content here */}
               {personalBankingBar && (
-                <div style={{ backgroundColor: "#fafafa" }}>
+                <div  style={{ backgroundColor: "#fafafa"}}>
                   <ul className="personal-secondary-nav-list">
                     <li>
                       <a href="/">Everyday Banking</a>
@@ -96,8 +97,9 @@ function SideNavigationBar() {
                 </div>
               )}
             </li>
+          <div>
 
-            <div>
+
               <li
                 style={{ padding: "25px 20px 25px 20px" }}
                 onClick={aboutUshandleBar}
@@ -196,10 +198,11 @@ function SideNavigationBar() {
 
         <div className="blocker-content">
           <div className="block-content-join-now">
-            <JoinNowButtonMobile
+            <Button
               width="11.25rem"
               paddingTop="13px"
               paddingBottom="13px"
+              Label="Join now"
             />
           </div>
 

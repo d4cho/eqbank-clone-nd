@@ -6,6 +6,7 @@
   padding-top: 10px;
   min-height: 10px;
   background-color: rgb(255, 255, 255);
+
 }
 .explore-products-title {
   text-align: center;
@@ -19,6 +20,12 @@
     display: none;
   }
   .link-drop-down {
+    display: none;
+  }
+  .find-out-more {
+    display: none;
+  }
+  .find-out-parent-container{
     display: none;
   }
 }

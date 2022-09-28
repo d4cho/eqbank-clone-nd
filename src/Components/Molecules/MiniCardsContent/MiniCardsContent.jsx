@@ -68,8 +68,8 @@ function MiniCardsContent() {
         <>
           <div className="borrowing-cards-container">
             <MiniCard
-              header="International Money Transfers"
-              content="Send money abroad for less using Wise."
+              header="Mortgage Market Place"
+              content="Find the best mortgage that's right for you."
               link="Learn more"
             />{" "}
           </div>

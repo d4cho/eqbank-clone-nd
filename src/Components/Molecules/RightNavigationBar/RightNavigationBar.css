@@ -58,6 +58,7 @@
     font-style: normal;
     font-size: 0.9rem;
     text-decoration: none;
+    margin-right: 5px;
 }
 .header-sign-in:hover{
     text-decoration: underline;

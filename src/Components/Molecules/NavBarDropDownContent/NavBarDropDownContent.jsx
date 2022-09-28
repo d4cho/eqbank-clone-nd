@@ -53,7 +53,7 @@ function NavBarDropdownContent() {
           
         </>
       ) : isAboutUsArrow ? (
-        <div style={isAboutUsArrow ?{boxShadow:'0 3px 5px rgba(0, 0, 0, 0.2) inset', paddingTop:'10px'}: null}>
+        <div className="find-out-parent-container" style={isAboutUsArrow ?{boxShadow:'0 3px 5px rgba(0, 0, 0, 0.2) inset', paddingTop:'10px'}: null}>
         <h1 className="find-out-more">Find out more about...</h1>
             <div className="find-out-cards-container">
             <MiniCard
