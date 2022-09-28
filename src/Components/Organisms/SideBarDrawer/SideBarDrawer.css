@@ -1,4 +1,4 @@
-@media screen and (max-width: 1020px) {
+
   .side-bar-drawer {
     box-sizing: border-box;
     width: 100%;
@@ -13,4 +13,13 @@
   .side-bar-drawer.open {
     transform: translateX(0);
   }
-}
+
+  @media screen and (min-width: 1020px) {
+    .side-bar-drawer{
+      display: none;
+    }
+
+    .side-bar-drawer.open{
+      display: none;
+    }
+  }
