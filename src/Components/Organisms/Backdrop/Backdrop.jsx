@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Backdrop.css";
-import { SideBarToggleContext } from "../../../Context/SideBarToggler";
 
 function Backdrop({backdropHandler}) {
   return (

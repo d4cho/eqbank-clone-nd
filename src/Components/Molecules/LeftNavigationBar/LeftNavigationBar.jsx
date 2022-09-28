@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import "./LeftNavigationBar.css";
 import { leftNavigationContext } from "../../../Context/LeftNavigationBarContext";
 import { SearchBarContext } from "../../../Context/SearchBarContext";
