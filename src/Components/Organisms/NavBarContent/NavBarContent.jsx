@@ -9,6 +9,7 @@ import { SideBarToggleContext } from "../../../Context/SideBarToggler";
 import NavBarDropdownContent from "../../Molecules/NavBarDropDownContent/NavBarDropDownContent";
 import MiniCardsContent from "../../Molecules/MiniCardsContent/MiniCardsContent";
 import SideBarDrawer from "../SideBarDrawer/SideBarDrawer";
+import EQBankLogo from "../../Atoms/EQBankLogo/EQBankLogo";
 
 function NavBarContent() {
   const { show, closeShow } = useContext(SearchBarContext);
@@ -47,13 +48,7 @@ function NavBarContent() {
             <LeftNavigationBar />
           </div>
 
-          <a href="/">
-            <img
-              className="header-logo-img"
-              src="https://www.eqbank.ca/images/default-source/2021-redesign/eqbank_icons_apr6/icons_eqbank/logo_eqbank.svg?sfvrsn=907b87d3_20"
-              alt=""
-            />
-          </a>
+          <EQBankLogo height="49px" width="114px"/>
         </div>
         {/* need one dive hide and then show */}
 
