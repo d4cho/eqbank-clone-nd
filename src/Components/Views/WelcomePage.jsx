@@ -1,9 +1,9 @@
 import React from "react";
- import OpeningAccountNavbar from "../Organisms/OpeningAccountNavbar/OpeningAccountNavbar";
+ import OpeningAccountNavbarContent from "../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent.jsx";
 function WelcomePage() {
   return (
     <>
-     <OpeningAccountNavbar/>
+     <OpeningAccountNavbarContent/>
     </>
   );
 }

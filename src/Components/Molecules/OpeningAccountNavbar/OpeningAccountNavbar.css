@@ -1,0 +1,44 @@
+.sign-up {
+    color: #fff;
+    background-color: #cb3694;
+    padding: 0.6rem 0.9rem;
+    border-radius: 30px;
+    margin-left: 0.5rem;
+    font-family: Open Sans, Dinot Regular, DinotRegular, -apple-system,
+      BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+      Noto Color Emoji;
+    font-size: 0.875rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .need-help {
+    font-family: Open Sans, Dinot Regular, DinotRegular, -apple-system,
+      BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+      Noto Color Emoji;
+    font-size: 0.875rem;
+    color: #757575;
+    font-weight: 450;
+  }
+  
+  .contact-us-opening-account {
+    font-family: Open Sans, Dinot Regular, DinotRegular, -apple-system,
+      BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+      Noto Color Emoji;
+    font-size: 0.875rem;
+    color: #757575;
+    font-weight: 450;
+  }
+  .header-diver {
+    width: 1px;
+    height: 15px;
+    background: rgba(104, 101, 98, 0.5);
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 400;
+  }
+
+  
