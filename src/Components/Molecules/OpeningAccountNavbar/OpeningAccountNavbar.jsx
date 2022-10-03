@@ -1,6 +1,7 @@
 import React from "react";
 import "./OpeningAccountNavbar.css";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { FaRegCommentDots } from "react-icons/fa";
 
 function OpeningAccountNavbar() {
   return (
@@ -22,7 +23,8 @@ function OpeningAccountNavbar() {
         <li>
           <div className="header-diver" />
         </li>
-        <li className="contact-us-opening-account">icon Contact us</li>
+        <FaRegCommentDots style={{ color: "#c73391", fontSize: "20px" }} />
+        <li className="contact-us-opening-account"> Contact us</li>
         <li>
           <a className="sign-up" href="/">
             Sign in
