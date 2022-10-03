@@ -1,0 +1,50 @@
+.opening-account-dropdown {
+  background-color: #fafafa;
+}
+@media screen and (min-width: 1020px) {
+  .opening-account-dropdown {
+    display: none;
+  }
+  .opening-account-dropdown-inner-container {
+    display: none;
+  }
+  .child-container-opening-account {
+    display: none;
+  }
+  .opening-account-dropdown-sign-in{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+.opening-account-dropdown-sign-in{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: -1px;
+  border-top: 1px solid  #dedede;
+}
+
+.opening-account-dropdown-inner-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1.5rem !important;
+  padding-top: 1.5rem !important;
+  gap: 20px;
+}
+
+.child-container-opening-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+}
+.opening-account-sign-in{
+  color:#c33991; 
+  text-decoration:underline;
+  margin-left:5px;
+  font-weight: 700;
+}
