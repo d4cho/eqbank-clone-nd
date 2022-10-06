@@ -7,11 +7,9 @@ function OpeningAccountFormContent(props) {
   const stepper = props.stepper;
   const viewAccountRequirements = props.viewAccountRequirements;
   const form = props.form;
-  const successMessage = props.successMessage;
 
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 1020px)").matches
-  );
+
+  const [matches, setMatches] = useState( window.matchMedia("(min-width: 1020px)").matches);
 
   useEffect(() => {
     window
@@ -34,7 +32,6 @@ function OpeningAccountFormContent(props) {
             {smartChoiceText}
             {savingPlusText}
             {viewAccountRequirements}
-            {successMessage}
             {form}
           </div>
         </div>

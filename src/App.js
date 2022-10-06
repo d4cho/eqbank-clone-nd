@@ -8,6 +8,7 @@ import SideBarToggleContextProvider from "./Context/SideBarToggler";
 import Navigation from "./Navigation";
 import WelcomePage from "./Components/Views/WelcomePage";
 import OpeningAccountNavbarTogglerContextProvider from "./Context/OpeningAccountNavbarToggler";
+import EmailVerification from "./Components/Views/EmailVerification";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                   }
                 />
                 <Route path="/welcome" element={<WelcomePage />} />
+                <Route path="/welcome/profile/emailVerification" element={<EmailVerification/>}></Route>
               </Routes>
             </OpeningAccountNavbarTogglerContextProvider>
           </SearchBarContextProvider>

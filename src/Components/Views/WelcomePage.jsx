@@ -4,7 +4,7 @@ import OpeningAccountFormContent from "../Organisms/OpeningAccountFormContent/Op
 import Stepper from "../Molecules/Stepper/Stepper.jsx";
 import SwitchAccountIcon from "@mui/icons-material/SwitchAccount";
 import TextField from "../Atoms/TextField/TextField.jsx";
-
+import { useNavigate } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import IosShareIcon from "@mui/icons-material/IosShare";
@@ -14,7 +14,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 function WelcomePage() {
   const [toggle, setToggle] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [valid, setValid] = useState(false);
+  const navigate = useNavigate();
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 1020px)").matches
@@ -53,7 +53,7 @@ function WelcomePage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (values.firstName && values.lastName && values.email) {
-      setValid(true);
+      navigate('/welcome/profile/emailVerification');
     }
     setSubmitted(true);
   };
@@ -229,11 +229,7 @@ function WelcomePage() {
             </div>
           </form>
         }
-        successMessage={
-          submitted && valid ? <div>SUBMITTED SUCCESS</div> : null
-        }
       />
-      {/* <OpeningAccountFormCard/> */}
     </>
   );
 }
