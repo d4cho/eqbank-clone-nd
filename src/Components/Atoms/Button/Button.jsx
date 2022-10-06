@@ -11,6 +11,7 @@ function Button(props) {
   const borderColor = props.borderColor
   const paddingLeft = props.paddingLeft
   const paddingRight = props.paddingRight
+  const href = props.href
   
   return (
     <>
@@ -26,7 +27,7 @@ function Button(props) {
           paddingRight: paddingRight
         }}
         className="main-button"
-        href="/"
+        href={href}
       >
         <span>{label}</span>
       </a>
