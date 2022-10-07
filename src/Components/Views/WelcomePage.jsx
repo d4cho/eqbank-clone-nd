@@ -12,6 +12,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms.jsx";
 import { SearchBarContext } from "../../Context/SearchBarContext.js";
 import Backdrop from "../Organisms/Backdrop/Backdrop.jsx";
+ import { FormContext } from "../../Context/FormContext.js";
 
 
 function WelcomePage() {
@@ -20,6 +21,13 @@ function WelcomePage() {
   const [valid, setValid] = useState(false);
   const navigate = useNavigate();
   const { show ,closeShow } = useContext(SearchBarContext);
+
+  const { values,
+    handleFirstNameInputChange,
+    handleLastNameInputChange,
+    handleEmailInputChange, } = useContext(
+    FormContext
+  );
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 1020px)").matches
@@ -31,25 +39,7 @@ function WelcomePage() {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
-  const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
 
-  const handleFirstNameInputChange = (event) => {
-    setValues({ ...values, firstName: event.target.value });
-    console.log(values);
-  };
-
-  const handleLastNameInputChange = (event) => {
-    setValues({ ...values, lastName: event.target.value });
-    console.log(values);
-  };
-  const handleEmailInputChange = (event) => {
-    setValues({ ...values, email: event.target.value });
-    console.log(values);
-  };
 
   const toggleHandler = () => {
     setToggle(!toggle);
@@ -96,7 +86,7 @@ function WelcomePage() {
             can open one in minutes.
           </p>
         }
-        smartChoiceText={<h2>Smart Choice</h2>}
+        mainHeader={<h2>Smart Choice</h2>}
         stepper={<Stepper />}
         viewAccountRequirements={
           <div

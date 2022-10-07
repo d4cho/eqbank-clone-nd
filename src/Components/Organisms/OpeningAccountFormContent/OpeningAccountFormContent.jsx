@@ -4,12 +4,14 @@ import "./OpeningAccountFormContent.css";
 
 function OpeningAccountFormContent(props) {
   const savingPlusText = props.savingPlusText;
-  const smartChoiceText = props.smartChoiceText;
+  const mainHeader = props.mainHeader;
   const stepper = props.stepper;
   const viewAccountRequirements = props.viewAccountRequirements;
   const form = props.form;
   const  dropShawdow = props.dropShawdow
   const spinnerShow = props.spinnerShow
+  const email = props.email
+  const passcodeTextFields = props.passcodeTextFields
 
  
 
@@ -24,7 +26,7 @@ function OpeningAccountFormContent(props) {
 
   return (
     <>
-      <div  style={matches ? { backgroundColor: "#f8f8f8", height:'1000px' } : {}}>
+      <div  style={matches ? { backgroundColor: "#f8f8f8", height:'1300px' } : {}}>
       {dropShawdow}
         <div className={matches ? "container" : ""}>
           <div
@@ -35,7 +37,9 @@ function OpeningAccountFormContent(props) {
             }
           >
             {stepper}
-            {smartChoiceText}
+            {mainHeader}
+            {email}
+            {passcodeTextFields}
             {savingPlusText}
             {viewAccountRequirements}
             {form}

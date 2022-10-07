@@ -9,9 +9,11 @@ import Navigation from "./Navigation";
 import WelcomePage from "./Components/Views/WelcomePage";
 import OpeningAccountNavbarTogglerContextProvider from "./Context/OpeningAccountNavbarToggler";
 import EmailVerification from "./Components/Views/EmailVerification";
+import FormContextProvider from "./Context/FormContext";
 
 function App() {
   return (
+    <FormContextProvider>
     <SideBarToggleContextProvider>
       <SubMenuContextProvider>
         <LeftNavigationContextProvider>
@@ -34,6 +36,7 @@ function App() {
         </LeftNavigationContextProvider>
       </SubMenuContextProvider>
     </SideBarToggleContextProvider>
+    </FormContextProvider>
   );
 }
 
