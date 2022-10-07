@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import OpeningAccountNavbarContent from "../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent.jsx";
 import OpeningAccountFormContent from "../Organisms/OpeningAccountFormContent/OpeningAccountFormContent.jsx";
 import Stepper from "../Molecules/Stepper/Stepper.jsx";
@@ -9,12 +9,17 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms.jsx";
+import { SearchBarContext } from "../../Context/SearchBarContext.js";
+import Backdrop from "../Organisms/Backdrop/Backdrop.jsx";
 
 
 function WelcomePage() {
   const [toggle, setToggle] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
   const navigate = useNavigate();
+  const { show ,closeShow } = useContext(SearchBarContext);
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 1020px)").matches
@@ -49,18 +54,42 @@ function WelcomePage() {
   const toggleHandler = () => {
     setToggle(!toggle);
   };
-
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (values.firstName && values.lastName && values.email) {
-      navigate('/welcome/profile/emailVerification');
+      setTimeout(() => {
+        navigate("/welcome/profile/emailVerification");
+      }, 1500);
+      setValid(true);
     }
     setSubmitted(true);
   };
   return (
     <>
+    {show && matches? <Backdrop backdropHandler={closeShow}/>: null}
       <OpeningAccountNavbarContent />
       <OpeningAccountFormContent
+        dropShawdow={submitted && valid ? <BackDropForForms /> : null}
+        spinnerShow={
+          submitted && valid ? (
+            <div
+            className="spin"
+              style={{
+                position: "relative",
+                bottom:'500px',
+                left: '170px',
+                zIndex: "3000",
+                flexDirection: "row",
+                display: "flex",
+                justifyContent: "center",
+                width: '65px',
+                height: '65px'
+              }}
+            >
+            </div>
+          ) : null
+        }
         savingPlusText={
           <p>
             A savings Plus Account gives you access to all EQ bank products.You
@@ -88,7 +117,6 @@ function WelcomePage() {
         form={
           <form action="" onSubmit={handleSubmit}>
             <h4>Let's create your profile</h4>
-
             <div className="text-field-container">
               <label htmlFor="">First name</label>
               <TextField

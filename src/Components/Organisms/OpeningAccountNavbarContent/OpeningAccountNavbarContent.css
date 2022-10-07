@@ -67,6 +67,11 @@
 }
 }
 
+@media screen and (min-width: 1020px) {
+  .spin {
+    margin-right: 30px;
+  }
+  }
 
 .wrapper {
   margin: 50px auto;

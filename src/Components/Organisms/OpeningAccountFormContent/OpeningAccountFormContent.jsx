@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "./OpeningAccountFormContent.css";
+
 
 function OpeningAccountFormContent(props) {
   const savingPlusText = props.savingPlusText;
@@ -7,6 +8,10 @@ function OpeningAccountFormContent(props) {
   const stepper = props.stepper;
   const viewAccountRequirements = props.viewAccountRequirements;
   const form = props.form;
+  const  dropShawdow = props.dropShawdow
+  const spinnerShow = props.spinnerShow
+
+ 
 
 
   const [matches, setMatches] = useState( window.matchMedia("(min-width: 1020px)").matches);
@@ -19,7 +24,8 @@ function OpeningAccountFormContent(props) {
 
   return (
     <>
-      <div style={matches ? { backgroundColor: "#f8f8f8" } : {}}>
+      <div  style={matches ? { backgroundColor: "#f8f8f8", height:'1000px' } : {}}>
+      {dropShawdow}
         <div className={matches ? "container" : ""}>
           <div
             className={
@@ -33,6 +39,7 @@ function OpeningAccountFormContent(props) {
             {savingPlusText}
             {viewAccountRequirements}
             {form}
+            {spinnerShow}
           </div>
         </div>
       </div>
