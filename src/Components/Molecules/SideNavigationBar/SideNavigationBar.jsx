@@ -203,6 +203,7 @@ function SideNavigationBar() {
               paddingTop="13px"
               paddingBottom="13px"
               Label="Join now"
+              href = "/"
             />
           </div>
 

@@ -81,6 +81,7 @@ function ProductCard(props) {
               paddingBottom="18px"
               paddingLeft="32px"
               paddingRight="32px"
+              href = "/"
             />
           ) : (
             <>
@@ -99,6 +100,7 @@ function ProductCard(props) {
                 paddingBottom="18px"
                 paddingLeft="32px"
                 paddingRight="32px"
+                href = "/"
               />
               <Button
                 paddingTop="16px"
@@ -109,6 +111,7 @@ function ProductCard(props) {
                 borderColor="1px solid black"
                 paddingLeft="32px"
                 paddingRight="32px"
+                href = "/"
                
               />
             </>

@@ -28,6 +28,7 @@ function RightNavigationBar(props) {
           Label="Join now"
           paddingLeft="10px"
           paddingRight="10px"
+          href = "/"
         />
       </div>
     </>

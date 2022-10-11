@@ -24,8 +24,8 @@
 @media screen and (max-width: 1020px) {
   .opening-account-container-mobile {
     padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,8 +44,8 @@
   position: relative;
 }
 .spin {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border: 5px solid #dddddd;
   border-radius: 50%;
   animation: loading 1.5s ease infinite;
@@ -54,13 +54,24 @@
   position: absolute;
   bottom: 15px;
   right: 0px;
-  margin-right: 5px;
 }
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 1020px) {
+.spin {
+  margin-left: 10px;
+}
+}
+
+@media screen and (min-width: 1020px) {
+  .spin {
+    margin-right: 30px;
+  }
+  }
 
 .wrapper {
   margin: 50px auto;

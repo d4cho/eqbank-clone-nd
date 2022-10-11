@@ -1,0 +1,32 @@
+.create-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #c33991;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: row;
+}
+.tracker {
+  border-bottom: 0.25rem solid #c8c8c8;
+  border-radius: 0.1875rem;
+  margin-left: 0.5rem;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.tracker.step-completed {
+  border-bottom: 0.25rem solid #c33991;
+  border-radius: 0.1875rem;
+  margin-left: 0.5rem;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  cursor: pointer;
+}
