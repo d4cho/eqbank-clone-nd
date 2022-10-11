@@ -11,21 +11,23 @@ import IosShareIcon from "@mui/icons-material/IosShare";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms.jsx";
 import { FormContext } from "../../Context/FormContext.js";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 import { StepperContext } from "@mui/material";
 function WelcomePage() {
   const [toggle, setToggle] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const { activeStep} = useContext(StepperContext);
+  const { activeStep } = useContext(StepperContext);
 
-  const { values,
+  const {
+    values,
     handleFirstNameInputChange,
     handleLastNameInputChange,
-    handleEmailInputChange, } = useContext(
-    FormContext,
-  );
+    handleEmailInputChange,
+  } = useContext(FormContext);
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 1020px)").matches
@@ -37,22 +39,30 @@ function WelcomePage() {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
-
-
   const toggleHandler = () => {
     setToggle(!toggle);
   };
- 
+
+  const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (values.firstName && values.lastName && values.email) {
+    if (
+      values.firstName &&
+      values.lastName &&
+      values.email &&
+      regex.test(values.email)
+    ) {
       setTimeout(() => {
         navigate("/welcome/profile/emailVerification");
       }, 1500);
       setValid(true);
+    } 
+    else{
+      setMessage("Please enter a valid email address.")
     }
+  
     setSubmitted(true);
-    
   };
   return (
     <>
@@ -62,20 +72,19 @@ function WelcomePage() {
         spinnerShow={
           submitted && valid ? (
             <div
-            className="spin"
+              className="spin"
               style={{
                 position: "relative",
-                bottom:'500px',
-                left: '170px',
+                bottom: "500px",
+                left: "170px",
                 zIndex: "3000",
                 flexDirection: "row",
                 display: "flex",
                 justifyContent: "center",
-                width: '65px',
-                height: '65px'
+                width: "65px",
+                height: "65px",
               }}
-            >
-            </div>
+            ></div>
           ) : null
         }
         savingPlusText={
@@ -85,7 +94,7 @@ function WelcomePage() {
           </p>
         }
         mainHeader={<h2>Smart Choice</h2>}
-        stepper={<Stepper  activeStep={activeStep}  />}
+        stepper={<Stepper activeStep={activeStep} />}
         textAndIcon={
           <div
             style={{
@@ -119,6 +128,7 @@ function WelcomePage() {
                     color: "#cb061d",
                     position: "relative",
                     bottom: "5px",
+                    fontSize: "0.8rem",
                   }}
                 >
                   This field is required
@@ -132,6 +142,7 @@ function WelcomePage() {
                 value={values.lastName}
                 handleInputChange={handleLastNameInputChange}
                 width={matches ? "18.78rem" : null}
+                backgroundColor='red'
               />
               {submitted && !values.lastName ? (
                 <p
@@ -139,6 +150,7 @@ function WelcomePage() {
                     color: "#cb061d",
                     position: "relative",
                     bottom: "5px",
+                    fontSize: "0.8rem",
                   }}
                 >
                   This field is required
@@ -163,11 +175,26 @@ function WelcomePage() {
                   color: "#cb061d",
                   position: "relative",
                   bottom: "5px",
+                  fontSize: "0.8rem",
                 }}
               >
                 This field is required
               </p>
             ) : null}
+            {message && (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "2px",
+                  color: "#cb061d",
+                  fontSize: "0.8rem",
+                }}
+              >
+                <ErrorOutlineIcon />
+                {message}
+              </div>
+            )}
             <p>
               By providing the above information, you agree to the terms of our{" "}
               <b style={{ color: "#c33991" }}>Privacy Agreement</b>{" "}

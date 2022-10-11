@@ -4,6 +4,7 @@ import OpeningAccountFormContent from "../Organisms/OpeningAccountFormContent/Op
 import Stepper from "../Molecules/Stepper/Stepper.jsx";
 import { StepperContext } from "../../Context/StepperContext";
 import TextField from "../Atoms/TextField/TextField";
+import FormSubmissionButton from "../Atoms/FormSubmissionButton";
 
 
 function PersonalInformation() {
@@ -32,6 +33,13 @@ function PersonalInformation() {
         form={
           <form action="" onSubmit={handleSubmit}>
             <TextField width={matches ? "18.78rem" : null} />
+            <div style={{ display: "flex", gap: "10px" }}>
+              <FormSubmissionButton
+                width="100px"
+                Label="Continue"
+                color="white"
+              />{" "}
+            </div>
           </form>
         }
       />
