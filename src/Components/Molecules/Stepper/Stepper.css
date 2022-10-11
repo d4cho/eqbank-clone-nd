@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.tracker.completed {
+.tracker.step-completed {
   border-bottom: 0.25rem solid #c33991;
   border-radius: 0.1875rem;
   margin-left: 0.5rem;

@@ -6,12 +6,13 @@ function OpeningAccountFormContent(props) {
   const savingPlusText = props.savingPlusText;
   const mainHeader = props.mainHeader;
   const stepper = props.stepper;
-  const viewAccountRequirements = props.viewAccountRequirements;
+  const textAndIcon = props.textAndIcon;
   const form = props.form;
   const  dropShawdow = props.dropShawdow
   const spinnerShow = props.spinnerShow
   const email = props.email
   const passcodeTextFields = props.passcodeTextFields
+  const formButton = props.formButton
 
  
 
@@ -39,9 +40,10 @@ function OpeningAccountFormContent(props) {
             {stepper}
             {mainHeader}
             {email}
+            {textAndIcon}
             {passcodeTextFields}
             {savingPlusText}
-            {viewAccountRequirements}
+            {formButton}
             {form}
             {spinnerShow}
           </div>

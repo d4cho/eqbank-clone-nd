@@ -11,16 +11,13 @@ function FormContextProvider(props) {
 
   const handleFirstNameInputChange = (event) => {
     setValues({ ...values, firstName: event.target.value });
-    console.log(values);
   };
 
   const handleLastNameInputChange = (event) => {
     setValues({ ...values, lastName: event.target.value });
-    console.log(values);
   };
   const handleEmailInputChange = (event) => {
     setValues({ ...values, email: event.target.value });
-    console.log(values);
   };
 
   return (
@@ -30,6 +27,7 @@ function FormContextProvider(props) {
         handleFirstNameInputChange,
         handleLastNameInputChange,
         handleEmailInputChange,
+        setValues
        
       }}
     >

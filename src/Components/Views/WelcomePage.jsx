@@ -10,23 +10,21 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms.jsx";
-import { SearchBarContext } from "../../Context/SearchBarContext.js";
-import Backdrop from "../Organisms/Backdrop/Backdrop.jsx";
- import { FormContext } from "../../Context/FormContext.js";
+import { FormContext } from "../../Context/FormContext.js";
 
-
+import { StepperContext } from "@mui/material";
 function WelcomePage() {
   const [toggle, setToggle] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
   const navigate = useNavigate();
-  const { show ,closeShow } = useContext(SearchBarContext);
+  const { activeStep} = useContext(StepperContext);
 
   const { values,
     handleFirstNameInputChange,
     handleLastNameInputChange,
     handleEmailInputChange, } = useContext(
-    FormContext
+    FormContext,
   );
 
   const [matches, setMatches] = useState(
@@ -54,10 +52,10 @@ function WelcomePage() {
       setValid(true);
     }
     setSubmitted(true);
+    
   };
   return (
     <>
-    {show && matches? <Backdrop backdropHandler={closeShow}/>: null}
       <OpeningAccountNavbarContent />
       <OpeningAccountFormContent
         dropShawdow={submitted && valid ? <BackDropForForms /> : null}
@@ -87,8 +85,8 @@ function WelcomePage() {
           </p>
         }
         mainHeader={<h2>Smart Choice</h2>}
-        stepper={<Stepper />}
-        viewAccountRequirements={
+        stepper={<Stepper  activeStep={activeStep}  />}
+        textAndIcon={
           <div
             style={{
               display: "flex",

@@ -62,7 +62,6 @@
 }
 
 .open-account-button-desktop{
-
   background-color: #cb3694;
   padding: 0.8125rem 1.5rem;
   color: white;
@@ -76,4 +75,8 @@
   cursor: pointer;
   border: #c33991;
 
+}
+
+.edit-email:hover{
+ text-decoration: underline;
 }
