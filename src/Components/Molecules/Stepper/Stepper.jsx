@@ -14,7 +14,7 @@ function Stepper(props) {
           </>
         ) : activeStep === 1 ? (
           <>
-            <p>Step 2 - Verify Identity</p>
+            <p>Step 2 - Verify your Identity</p>
           </>
         ) : activeStep === 2 ? (
           <>
@@ -26,7 +26,7 @@ function Stepper(props) {
         <ChevronRightIcon />
       </div>
 
-      <div  className="stepper">
+      <div  style={{position:'relative', right:'5px'}} className="stepper">
         <div
           className={
             activeStep === 0 ? "tracker step-completed" : "tracker step-completed"

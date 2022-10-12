@@ -27,7 +27,7 @@ function OpeningAccountFormContent(props) {
 
   return (
     <>
-      <div  style={matches ? { backgroundColor: "#f8f8f8", height:'1300px' } : {}}>
+      <div  style={matches ? { backgroundColor: "#f8f8f8" } : {}}>
       {dropShawdow}
         <div className={matches ? "container" : ""}>
           <div

@@ -4,7 +4,7 @@ import OpeningAccountFormContent from "../Organisms/OpeningAccountFormContent/Op
 import Stepper from "../Molecules/Stepper/Stepper.jsx";
 import { FormContext } from "../../Context/FormContext";
 import PassCodeTextField from "../Atoms/PasscodeTextField/PasscodeTextField";
-import FormSubmissionButton from "../Atoms/FormSubmissionButton";
+import FormSubmissionButton from "../Atoms/FromSubmissionButton/FormSubmissionButton";
 import { StepperContext } from "../../Context/StepperContext";
 import { useNavigate } from "react-router-dom";
 import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms";

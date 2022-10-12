@@ -1,0 +1,14 @@
+.select-field {
+    max-width: 100%;
+    border-radius: 0.25rem !important;
+    height: 2.75rem;
+    font-size: 0.9rem;
+    border: 1px solid #949494;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+  
+
+  option[value=""][disabled] {
+    display: none;
+  }
