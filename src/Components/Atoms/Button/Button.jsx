@@ -5,7 +5,7 @@ function Button({
     width,
     paddingTop,
     paddingBottom,
-    label,
+    Label,
     backgroundColor,
     textColor,
     borderColor,
@@ -14,22 +14,24 @@ function Button({
     href,
 }) {
     return (
-        <a
-            style={{
-                minWidth: width,
-                paddingBottom: paddingBottom,
-                paddingTop: paddingTop,
-                backgroundColor: backgroundColor,
-                color: textColor,
-                border: borderColor,
-                paddingLeft: paddingLeft,
-                paddingRight: paddingRight,
-            }}
-            className='main-button'
-            href={href}
-        >
-            <span>{label}</span>
-        </a>
+        <>
+            <a
+                style={{
+                    minWidth: width,
+                    paddingBottom: paddingBottom,
+                    paddingTop: paddingTop,
+                    backgroundColor: backgroundColor,
+                    color: textColor,
+                    border: borderColor,
+                    paddingLeft: paddingLeft,
+                    paddingRight: paddingRight,
+                }}
+                className='main-button'
+                href={href}
+            >
+                <span>{Label}</span>
+            </a>
+        </>
     );
 }
 

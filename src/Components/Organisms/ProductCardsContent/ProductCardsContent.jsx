@@ -39,8 +39,8 @@ function ProductCardContent() {
                         title={product.cardTitle}
                         image={product.image}
                         subTitle={product.subTitle}
-                    listItems={product.listItems}
-                    width="70%"
+                        listItems={product.listItems}
+                        width='70%'
                     />
                 ));
 
@@ -56,7 +56,7 @@ function ProductCardContent() {
                     />
                 ));
 
-             case 'A smart way to pay':
+            case 'A smart way to pay':
                 return aSmartWayToPayData.map((product, idx) => (
                     <ProductCard
                         key={idx}
@@ -68,28 +68,28 @@ function ProductCardContent() {
                     />
                 ));
 
-             case "A mortgage that's worth it":
-            return mortgageThatsWorthItData.map((product, idx) => (
-                <ProductCard
-                    key={idx}
-                    title={product.cardTitle}
-                    image={product.image}
-                    subTitle={product.subTitle}
-                    listItems={product.listItems}
-                    width='70%'
-                />
-            ));
+            case "A mortgage that's worth it":
+                return mortgageThatsWorthItData.map((product, idx) => (
+                    <ProductCard
+                        key={idx}
+                        title={product.cardTitle}
+                        image={product.image}
+                        subTitle={product.subTitle}
+                        listItems={product.listItems}
+                        width='70%'
+                    />
+                ));
             default:
-                 return bankingThatEarnsCardData.map((product, idx) => (
-                     <ProductCard
-                         key={idx}
-                         title={product.cardTitle}
-                         image={product.image}
-                         subTitle={product.subTitle}
-                         listItems={product.listItems}
-                         width='70%'
-                     />
-                 ));
+                return bankingThatEarnsCardData.map((product, idx) => (
+                    <ProductCard
+                        key={idx}
+                        title={product.cardTitle}
+                        image={product.image}
+                        subTitle={product.subTitle}
+                        listItems={product.listItems}
+                        width='70%'
+                    />
+                ));
         }
     };
     return (
@@ -151,7 +151,7 @@ function ProductCardContent() {
 
             {/* desktop */}
             <div className='product-cards-desktop'>
-                {/* side navigation */}
+                {/* side navigation this can be a molecule */}
                 <div className='product-cards-nav-sticky'>
                     <ul className='product-cards-nav-list'>
                         <h3>I want...</h3>
