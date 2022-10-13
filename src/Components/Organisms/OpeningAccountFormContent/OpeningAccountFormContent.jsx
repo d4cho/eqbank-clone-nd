@@ -10,13 +10,10 @@ function OpeningAccountFormContent(props) {
   const form = props.form;
   const  dropShawdow = props.dropShawdow
   const spinnerShow = props.spinnerShow
-  const email = props.email
+  const subText = props.subText
   const passcodeTextFields = props.passcodeTextFields
   const formButton = props.formButton
-
- 
-
-
+  
   const [matches, setMatches] = useState( window.matchMedia("(min-width: 1020px)").matches);
 
   useEffect(() => {
@@ -27,7 +24,7 @@ function OpeningAccountFormContent(props) {
 
   return (
     <>
-      <div  style={matches ? { backgroundColor: "#f8f8f8", height:'1300px' } : {}}>
+      <div  style={matches ? { backgroundColor: "#f8f8f8" } : {}}>
       {dropShawdow}
         <div className={matches ? "container" : ""}>
           <div
@@ -39,7 +36,7 @@ function OpeningAccountFormContent(props) {
           >
             {stepper}
             {mainHeader}
-            {email}
+            {subText}
             {textAndIcon}
             {passcodeTextFields}
             {savingPlusText}
