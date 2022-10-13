@@ -114,7 +114,7 @@ function EmailVerification() {
         }
         mainHeader={<h2>Check your inbox</h2>}
         stepper={<Stepper activeStep={activeStep} />}
-        email={
+        subText={
           <p style={{ fontSize: ".875rem" }}>
             A passcode was sent to <b>{values.email}</b>
           </p>

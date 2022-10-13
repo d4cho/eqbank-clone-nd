@@ -1,12 +1,10 @@
 import React from "react";
 import "./MiniCard.css";
 
-function MiniCard(props) {
-const header = props.header
-const content = props.content
-const link = props.link
+function MiniCard({header,content,link}) {
+
   return (
-    <>
+ 
       <div className="card">
         <div className="high-lighter" />
         <div className="card-content">
@@ -15,7 +13,7 @@ const link = props.link
           <a href="/" className="learn">{link}</a>
         </div>
       </div>
-    </>
+  
   );
 }
 

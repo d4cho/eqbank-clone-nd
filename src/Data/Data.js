@@ -1,80 +1,118 @@
-const scrollDown = () => {
-  window.scroll({
-    top: document.body.offsetHeight,
-    left: 0, 
-    behavior: 'smooth',
-  });
- }
-export const cardsDataOne = [
+// const scrollDown = () => {
+//     window.scroll({
+//         top: document.body.offsetHeight,
+//         left: 0,
+//         behavior: 'smooth',
+//     });
+// };
+export const bankingThatEarnsCardData = [
     {
-      id: 1,
-      cardTitle:"Savings Plus Account",
-      subTitle:"Earn up to 200×  more than other banks without all the nonsense.",
-      image: "https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4",
-      listOne:"2.00% interest",
-      listTwo:"No Monthly fees or minimum balance",
-      listThree:"Free bill payments",
-      listFour:"Free interac e-Transfers and more"
+        cardTitle: 'Savings Plus Account',
+        subTitle: 'Earn up to 200×  more than other banks without all the nonsense.',
+        image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
+        listItems: [
+            '2.00% interest',
+            'No Monthly fees or minimum balance',
+            'Free bill payments',
+            'Free interac e-Transfers and more',
+        ],
     },
     {
-      id: 2,
-      image:"https://www.eqbank.ca/images/default-source/svgs/jointaccount_pink.svg?sfvrsn=b12a86d3_4",
-      cardTitle:"Joint Savings Plus Account",
-      subTitle:"Earn up to 200×  more than other banks without all the nonsense.",
-      listOne:"2.00% interest",
-      listTwo:"Easy online sign-up with zero paperwork",
-      listThree:"Add up 3 people in a single click",
-    },
-    {
-      id: 3,
-      image:"https://www.eqbank.ca/images/default-source/svgs/tfsa_pink.svg?sfvrsn=bd2a86d3_10",
-      cardTitle:"TFSA Savings Account",
-      subTitle:"Earn up to 200×  more than other banks without all the nonsense.",
-      listOne:"2.00 interest, tax free",
-      listTwo:"Zero fees for bigger earnings",
-      listThree:"No minimum balance",
-      listFour:"No-nonsense online sign-up in minutes"
-    },
-    {
-      id: 4,
-      image:"https://www.eqbank.ca/images/default-source/svgs/usd_pink.svg?sfvrsn=892a86d3_4",
-      cardTitle:"US Dollar Account",
-      subTitle:"Earn up to 200×  more than other banks without all the nonsense.",
-      listOne:"1.40% interest on every dollar",
-      listTwo:"No monthly fees",
-      listThree:"Seriously competitive exchange rate",
-      listFour:"A fast, cheap way to send US dollars abroad"
-      },
-    ]
+        image: 'https://www.eqbank.ca/images/default-source/svgs/jointaccount_pink.svg?sfvrsn=b12a86d3_4',
+        cardTitle: 'Joint Savings Plus Account',
+        listItems: [
+            '2.00% interest',
+            'Easy online sign-up with zero paperwork',
+            'Add up 3 people in a single click',
+        ],
 
-    export const cardsDataTwo = [
-        {
-          id: 1,
-          image:"https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4",
-          cardTitle:"GICs",
-          subTitle:"Invest it and forget it with guaranteed rates on our registered and non-registred GICs.",
-          listOne: <>FEATURE RATE: 4.55%<sup onClick={scrollDown}>**</sup>on a 1-year GIC</>,
-          listTwo:"Invest for the short term or long term",
-          listThree:"Break free of restrictions with our low minimum deposit",
-          listFour:"Skip the hassle and buy a GIC in second"
-        },
-        {
-          id: 2,
-          image:"https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4",
-          cardTitle:"RSP Savings Account",
-          listOne:<>2.00% interest<sup onClick={scrollDown}>*</sup> on every tax-deferred dollar</>,
-          listTwo:"Zero fees for bigger earnings",
-          listThree:"No minimum balance or other banking nonsense",
-          listFour:"Online sign-up in minutes"
-        },
-        {
-          id: 3,
-          image:"https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4",
-          cardTitle:"TFSA Savings Account",
-          subTitle:"Invest smarter with high interest and tax-free earnings",
-          listOne:<>2.00% interest<sup onClick={scrollDown}>*</sup>, tax-free</>,
-          listTwo:"Zero fees for bigger earnings",
-          listThree:"No minimum balance",
-          listFour:"No-nonsense online sign-up in minutes"
-        },
-        ]
+        subTitle: 'Earn up to 200×  more than other banks without all the nonsense.',
+    },
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/tfsa_pink.svg?sfvrsn=bd2a86d3_10',
+        cardTitle: 'TFSA Savings Account',
+        subTitle: 'Earn up to 200×  more than other banks without all the nonsense.',
+        listItems: [
+            '2.00 interest, tax free',
+            'Zero fees for bigger earnings',
+            'No minimum balance',
+            'No-nonsense online sign-up in minutes',
+        ],
+    },
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/usd_pink.svg?sfvrsn=892a86d3_4',
+        cardTitle: 'US Dollar Account',
+        subTitle: 'Earn up to 200×  more than other banks without all the nonsense.',
+        listItems: [
+            '1.40% interest on every dollar',
+            'No monthly fees',
+            'Seriously competitive exchange rate',
+            'A fast, cheap way to send US dollars abroad',
+        ],
+    },
+];
+
+export const investmentsThatGrowCardData = [
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
+        cardTitle: 'GICs',
+        subTitle:
+            'Invest it and forget it with guaranteed rates on our registered and non-registred GICs.',
+        listItems: [
+            'FEATURE RATE: 4.55% on a 1-year GIC',
+            'Invest for the short term or long term',
+            'Break free of restrictions with our low minimum deposit',
+            'Skip the hassle and buy a GIC in second',
+        ],
+    },
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
+        cardTitle: 'RSP Savings Account',
+        subTitle: 'Grow your retirement savings the smart way',
+        listItems: [
+            '2.00% interest on every tax-deferred dollar',
+
+            'Zero fees for bigger earnings',
+            'No minimum balance or other banking nonsense',
+            'Online sign-up in minutes',
+        ],
+    },
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
+        cardTitle: 'TFSA Savings Account',
+        subTitle: 'Invest smarter with high interest and tax-free earnings',
+        listItems: [
+            '2.00% interest, tax-free',
+            'Zero fees for bigger earnings',
+            'No minimum balance',
+            'No-nonsense online sign-up in minutes',
+        ],
+    },
+];
+
+export const aSmartWayToPayData = [
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
+        cardTitle: 'International Money Transfers',
+        subTitle: 'Need to send money or make payments abroad? do it for a whole lot less',
+        listItems: [
+            'Up to 8 cheaper than other banks',
+            'A no-nonsense, zero-markup exchange rate',
+            'Send money direct from your account in a few easy steps',
+            'Get your money there fast(some transfers are instant!)',
+        ],
+    },
+];
+
+export const mortgageThatsWorthItData = [
+    {
+        image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
+        cardTitle: 'Mortgage Marketplace',
+        subTitle: "The no-nonsense way to find the best mortgage that's right for you.",
+        listItems: [
+            'Access 2,000 mortgage products in one place',
+            'Get the best rates right from the start',
+            'Simple online process',
+        ],
+    },
+];
