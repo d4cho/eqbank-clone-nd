@@ -118,3 +118,11 @@ export const mortgageThatsWorthItData = [
         ],
     },
 ];
+
+
+ export const productCardTypes = [
+     'Banking that earns',
+     'Investments that grow',
+     'A smart way to pay',
+     "A mortgage that's worth it",
+ ];

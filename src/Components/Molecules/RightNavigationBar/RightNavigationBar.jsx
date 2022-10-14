@@ -2,7 +2,7 @@ import React from "react";
 import "./RightNavigationBar.css";
 import Link from "../../Atoms/Link/Link";
 
-function RightNavigationBar(props) {
+function RightNavigationBar() {
   return (
     <>
       <div className="right-navigation-container">

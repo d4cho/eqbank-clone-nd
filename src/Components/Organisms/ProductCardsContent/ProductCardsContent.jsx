@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import './ProductCardsContent.css';
 import ProductCard from '../../Atoms/ProductCard/ProductCard';
 import { bankingThatEarnsCardData } from '../../../Data/Data';
@@ -7,23 +7,28 @@ import { aSmartWayToPayData } from '../../../Data/Data';
 import { mortgageThatsWorthItData } from '../../../Data/Data';
 import SideStickyNavBar from '../../Molecules/SideStickyNavBar/SideStickyNavBar';
 
-function ProductCardContent() {
+function ProductCardContent({ productCardTypes }) {
     const [title, setTitle] = useState('Banking that earns');
 
-    const bankingThatEarns = () => {
-        setTitle('Banking that earns');
+    const switchTitles = (title) => {
+        switch (title) {
+            case 'Banking that earns':
+                setTitle('Banking that earns');
+                break;
+            case 'Investments that grow':
+                setTitle('Investments that grow');
+                break;
+            case 'A smart way to pay':
+                setTitle('A smart way to pay');
+                break;
+            case "A mortgage that's worth it":
+                setTitle("A mortgage that's worth it");
+                break;
+            default:
+                setTitle('Banking that earns');
+        }
     };
 
-    const investmentsThatGrow = () => {
-        setTitle('Investments that grow');
-    };
-
-    const aSmartWayToPay = () => {
-        setTitle('A smart way to pay');
-    };
-    const aMortgageThatsWorthIt = () => {
-        setTitle("A mortgage that's worth it");
-    };
     // const scrollDown = () => {
     //     window.scroll({
     //         top: document.body.offsetHeight,
@@ -109,7 +114,12 @@ function ProductCardContent() {
         <>
             <div className='product-cards-mobile'>
                 <h2 className='product-cards-title'>I want…</h2>
-                <h3 className='product-cards-subtitle'>Banking that earns</h3>
+                <h3 className='product-cards-subtitle'>
+                    {' '}
+                    {productCardTypes.filter((name) => {
+                        return name === 'Banking that earns';
+                    })}
+                </h3>
                 <div className='product-cards-container'>
                     {bankingThatEarnsCardData.map((product, idx) => (
                         <ProductCard
@@ -122,7 +132,11 @@ function ProductCardContent() {
                         />
                     ))}
                 </div>
-                <h3 className='product-cards-subtitle'>Investment that grow</h3>
+                <h3 className='product-cards-subtitle'>
+                    {productCardTypes.filter((name) => {
+                        return name === 'Investments that grow';
+                    })}
+                </h3>
                 <div className='product-cards-container'>
                     {investmentsThatGrowCardData.map((product, idx) => (
                         <ProductCard
@@ -136,7 +150,12 @@ function ProductCardContent() {
                     ))}
                     ;
                 </div>
-                <h3 className='product-cards-subtitle'> A Smart way to pay</h3>
+                <h3 className='product-cards-subtitle'>
+                    {' '}
+                    {productCardTypes.filter((name) => {
+                        return name === 'A smart way to pay';
+                    })}
+                </h3>
                 {aSmartWayToPayData.map((product, idx) => (
                     <ProductCard
                         key={idx}
@@ -147,7 +166,13 @@ function ProductCardContent() {
                         width='70%'
                     />
                 ))}
-                ;<h3 className='product-cards-subtitle'>A mortgage that’s worth it</h3>
+                ;
+                <h3 className='product-cards-subtitle'>
+                    {' '}
+                    {productCardTypes.filter((name) => {
+                        return name === "A mortgage that's worth it";
+                    })}
+                </h3>
                 {mortgageThatsWorthItData.map((product, idx) => (
                     <ProductCard
                         key={idx}
@@ -165,10 +190,8 @@ function ProductCardContent() {
                 {/* side navigation*/}
                 <SideStickyNavBar
                     title={title}
-                    bankingThatEarns={bankingThatEarns}
-                    investmentsThatGrow={investmentsThatGrow}
-                    aSmartWayToPay={aSmartWayToPay}
-                    aMortgageThatsWorthIt={aMortgageThatsWorthIt}
+                    productCardTypes={productCardTypes}
+                    switchTitles={switchTitles}
                 />
 
                 <div className='product-cards-wrapper'>

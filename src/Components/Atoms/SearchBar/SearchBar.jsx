@@ -15,7 +15,6 @@ function SearchBar() {
                 }}
                 src='https://www.eqbank.ca/Assets/dist/images/search-icon-pink.svg'
                 alt=''
-                srcset=''
             />
             <input placeholder='Search:' className='search-field' type='text' />
         </>

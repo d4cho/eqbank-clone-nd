@@ -6,7 +6,7 @@ function ProductCard({ image, title, subTitle, listItems, width, Label }) {
     return (
         <div style={{ minWidth: width }} className='product-card'>
             <div className='product-card-header-container'>
-                <img src={image} alt='' srcset='' style={{ height: '40px', width: '40px' }} />
+                <img src={image} alt='' style={{ height: '40px', width: '40px' }} />
                 <h4>{title}</h4>
             </div>
 
@@ -27,7 +27,6 @@ function ProductCard({ image, title, subTitle, listItems, width, Label }) {
                                 <img
                                     src='https://www.eqbank.ca/Assets/dist/images/arrow-right-thin-black.svg'
                                     alt=''
-                                    srcset=''
                                     style={{ height: '1.5rem', width: '1.5rem' }}
                                 />
                                 {item}{' '}

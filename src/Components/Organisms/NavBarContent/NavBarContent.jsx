@@ -62,7 +62,6 @@ function NavBarContent() {
                     onClick={closeShow}
                     src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
                     alt=""
-                    srcset=""
                   />
                 </span>
                 <button className="Go-button">Go</button>
@@ -80,7 +79,6 @@ function NavBarContent() {
                     onClick={closeShow}
                     src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
                     alt=""
-                    srcset=""
                   />
                 </span>
                 <button className="Go-button">Go</button>
@@ -97,7 +95,6 @@ function NavBarContent() {
                     onClick={closeShow}
                     src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
                     alt=""
-                    srcset=""
                   />
                 </span>
                 <button className="Go-button">Go</button>

@@ -235,7 +235,6 @@ function WelcomePage() {
                   style={{ height: "90px", width: "90px" }}
                   src="https://join.eqbank.ca/assets/images/general/cdic-member.svg?v=36725a9"
                   alt=""
-                  srcset=""
                 />
               </div>
             )}
