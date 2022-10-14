@@ -1,7 +1,7 @@
 import React from 'react';
-import './Button.css';
+import './Link.css';
 
-function Button({
+function Link({
     width,
     paddingTop,
     paddingBottom,
@@ -35,4 +35,4 @@ function Button({
     );
 }
 
-export default Button;
+export default Link;

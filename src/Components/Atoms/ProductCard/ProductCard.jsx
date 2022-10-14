@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProductCard.css';
-import Button from '../Button/Button';
+import Button from '../Link/Link';
 
-function ProductCard({ image, title, subTitle, listItems, width }) {
+function ProductCard({ image, title, subTitle, listItems, width, Label }) {
     return (
         <div style={{ minWidth: width }} className='product-card'>
             <div className='product-card-header-container'>
@@ -19,23 +19,25 @@ function ProductCard({ image, title, subTitle, listItems, width }) {
             <ul className='product-card-list'>
                 {listItems.map((item, idx) => {
                     return (
-                        <div
-                            key={idx}
-                            style={{ display: 'flex', gap: '10px', paddingBottom: '10px' }}
-                        >
-                            <img
-                                src='https://www.eqbank.ca/Assets/dist/images/arrow-right-thin-black.svg'
-                                alt=''
-                                srcset=''
-                                style={{ height: '1.5rem', width: '1.5rem' }}
-                            />
-                            <li>{item}</li>
-                        </div>
+                        <>
+                            <li
+                                key={idx}
+                                style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}
+                            >
+                                <img
+                                    src='https://www.eqbank.ca/Assets/dist/images/arrow-right-thin-black.svg'
+                                    alt=''
+                                    srcset=''
+                                    style={{ height: '1.5rem', width: '1.5rem' }}
+                                />
+                                {item}{' '}
+                            </li>
+                        </>
                     );
                 })}
             </ul>
             <div className='product-card-button-container'>
-                {title === 'Mortgage Marketplace' ? (
+                {!Label ? (
                     <Button
                         Label='Learn more'
                         backgroundColor='#c33991'
@@ -48,15 +50,7 @@ function ProductCard({ image, title, subTitle, listItems, width }) {
                 ) : (
                     <>
                         <Button
-                            Label={
-                                title === 'TFSA Savings Account' ||
-                                title === 'GICs' ||
-                                title === 'RSP Savings Account'
-                                    ? 'Start Investing '
-                                    : title === 'International Money Transfers'
-                                    ? 'Send money abroad'
-                                    : 'Start earning'
-                            }
+                            Label={Label}
                             backgroundColor='#c33991'
                             paddingTop='16px'
                             paddingBottom='18px'

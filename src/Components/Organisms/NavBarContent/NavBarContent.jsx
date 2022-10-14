@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./NavBarContent.css";
-import Button from "../../Atoms/Button/Button";
+import Link from "../../Atoms/Link/Link";
 import LeftNavigationBar from "../../Molecules/LeftNavigationBar/LeftNavigationBar";
 import RightNavigationBar from "../../Molecules/RightNavigationBar/RightNavigationBar";
 import { SearchBarContext } from "../../../Context/SearchBarContext";
@@ -19,7 +19,7 @@ function NavBarContent() {
       <div className="parent-container">
         <div className="inner-container">
           <div className="join-now-container">
-            <Button
+            <Link
               paddingTop="10px"
               paddingBottom="10px"
               Label="Join now"
