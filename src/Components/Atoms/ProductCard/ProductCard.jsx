@@ -16,7 +16,7 @@ function ProductCard({ image, title, subTitle, listItems, width, Label }) {
                 </strong>
             </div>
 
-            <ul className='product-card-list'>
+            <ul className='product-card-list' >
                 {listItems.map((item, idx) => {
                     return (
                         <>

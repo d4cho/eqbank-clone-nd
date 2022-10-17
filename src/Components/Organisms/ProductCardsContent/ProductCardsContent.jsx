@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import './ProductCardsContent.css';
 import ProductCard from '../../Atoms/ProductCard/ProductCard';
 import { bankingThatEarnsCardData } from '../../../Data/Data';
@@ -6,6 +6,12 @@ import { investmentsThatGrowCardData } from '../../../Data/Data';
 import { aSmartWayToPayData } from '../../../Data/Data';
 import { mortgageThatsWorthItData } from '../../../Data/Data';
 import SideStickyNavBar from '../../Molecules/SideStickyNavBar/SideStickyNavBar';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 function ProductCardContent({ productCardTypes }) {
     const [title, setTitle] = useState('Banking that earns');
@@ -42,6 +48,8 @@ function ProductCardContent({ productCardTypes }) {
     // const handleClick = () => {
     //     ref.current?.scrollIntoView({ behavior: 'smooth' });
     // };
+
+  const pagination = {clickable: true}
 
     const renderSelectedView = (title) => {
         switch (title) {
@@ -120,35 +128,53 @@ function ProductCardContent({ productCardTypes }) {
                         return name === 'Banking that earns';
                     })}
                 </h3>
-                <div className='product-cards-container'>
-                    {bankingThatEarnsCardData.map((product, idx) => (
-                        <ProductCard
-                            key={idx}
-                            title={product.cardTitle}
-                            image={product.image}
-                            subTitle={product.subTitle}
-                            listItems={product.listItems}
-                            width='70%'
-                        />
-                    ))}
+                <div style={{ width: '100%' }}>
+                    <Swiper
+                        slidesPerView={1.5}
+                        pagination={pagination}
+                        modules={[Pagination]}
+                        speed={800}
+                        spaceBetween={10}
+                    >
+                        {bankingThatEarnsCardData.map((product, idx) => (
+                            <SwiperSlide>
+                                <ProductCard
+                                    key={idx}
+                                    title={product.cardTitle}
+                                    image={product.image}
+                                    subTitle={product.subTitle}
+                                    listItems={product.listItems}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
                 <h3 className='product-cards-subtitle'>
                     {productCardTypes.filter((name) => {
                         return name === 'Investments that grow';
                     })}
                 </h3>
-                <div className='product-cards-container'>
-                    {investmentsThatGrowCardData.map((product, idx) => (
-                        <ProductCard
-                            key={idx}
-                            title={product.cardTitle}
-                            image={product.image}
-                            subTitle={product.subTitle}
-                            listItems={product.listItems}
-                            width='70%'
-                        />
-                    ))}
-                    ;
+                <div>
+                    <Swiper
+                        slidesPerView={1.5}
+                        pagination={pagination}
+                        modules={[Pagination]}
+                        speed={800}
+                        spaceBetween={10}
+                    >
+                        {investmentsThatGrowCardData.map((product, idx) => (
+                            <SwiperSlide>
+                                <ProductCard
+                                    key={idx}
+                                    title={product.cardTitle}
+                                    image={product.image}
+                                    subTitle={product.subTitle}
+                                    listItems={product.listItems}
+                                />
+                            </SwiperSlide>
+                        ))}
+                        ;
+                    </Swiper>
                 </div>
                 <h3 className='product-cards-subtitle'>
                     {' '}

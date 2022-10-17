@@ -54,9 +54,9 @@ function PersonalInformation() {
                 personalValues.postalCode &&
                 regexPostalCode.test(personalValues.postalCode) &&
                 streetAddressRegex.test(personalValues.streetAddress)) ||
-            personalValues.streetAddressLineTwo
+            streetAddressRegex.test(personalValues.streetAddressLineTwo)
         ) {
-            nextStep();
+            console.log("success")
         }
 
         setSubmitted(true);
@@ -84,7 +84,7 @@ function PersonalInformation() {
                 form={
                     <form action='' onSubmit={handleSubmit}>
                         <div className='text-field-container'>
-                            <label style={{ fontSize: '0.8rem', fontWeight: '600' }} htmlFor=''>
+                            <label style={{ fontSize: '0.8rem', fontWeight: '600' }} >
                                 Street Address
                             </label>
                             <TextField
@@ -161,6 +161,7 @@ function PersonalInformation() {
                                     value={personalValues.streetAddressLineTwo}
                                     handleInputChange={streetAddressLineTwoInputChange}
                                 />
+                              
                             </div>
                             <div
                                 style={{
@@ -178,7 +179,7 @@ function PersonalInformation() {
                                     value={personalValues.city}
                                     handleInputChange={cityInputChange}
                                 />
-                                {submitted && !personalValues.city ? (
+                                {submitted &&  !personalValues.city ? (
                                     <div
                                         style={{
                                             display: 'flex',
