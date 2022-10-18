@@ -57,10 +57,10 @@ function WelcomePage() {
         setSubmitted(true);
     };
     return (
-        <>
+        <div>
             <OpeningAccountNavbarContent />
             <OpeningAccountFormContent
-                dropShawdow={submitted && valid ? <BackDropForForms /> : null}
+             dropShawdow={submitted && valid ? <BackDropForForms /> : null}
                 spinnerShow={
                     submitted && valid ? (
                         <div
@@ -173,7 +173,7 @@ function WelcomePage() {
                                 This field is required
                             </p>
                         ) : null}
-                        {message && (
+                        {message && !regex.test(values.email) && (
                             <div
                                 style={{
                                     display: 'flex',
@@ -259,7 +259,7 @@ function WelcomePage() {
                     </form>
                 }
             />
-        </>
+        </div>
     );
 }
 

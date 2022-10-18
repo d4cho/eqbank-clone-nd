@@ -7,7 +7,7 @@ function OpeningAccountFormContent(props) {
     const stepper = props.stepper;
     const textAndIcon = props.textAndIcon;
     const form = props.form;
-    const dropShawdow = props.dropShawdow;
+     const dropShawdow = props.dropShawdow;
     const spinnerShow = props.spinnerShow;
     const subText = props.subText;
     const passcodeTextFields = props.passcodeTextFields;
@@ -23,7 +23,7 @@ function OpeningAccountFormContent(props) {
 
     return (
         <>
-            <div style={matches ? { backgroundColor: '#f8f8f8', minHeight: '1100px' } : {}}>
+            <div style={matches ? { backgroundColor: '#f8f8f8', minHeight: '1010px' } : {}}>
                 {dropShawdow}
                 <div className={matches ? 'container' : ''}>
                     <div
