@@ -1,17 +1,18 @@
 import React from 'react';
 import './TextField.css';
 
-function TextField({ placeholder, value, handleInputChange, width, onBlur, error }) {
+function TextField({ placeholder, value, handleInputChange, width }) {
     return (
         <>
             <input
-                style={{ width: width, backgroundColor: error ? '#fcedec' : '' }}
+                style={{
+                    width: width,
+                }}
                 placeholder={placeholder}
                 type='text'
                 className='text-field'
                 value={value}
                 onChange={handleInputChange}
-                onBlur={onBlur}
             />
         </>
     );

@@ -1,10 +1,4 @@
-// const scrollDown = () => {
-//     window.scroll({
-//         top: document.body.offsetHeight,
-//         left: 0,
-//         behavior: 'smooth',
-//     });
-// };
+
 export const bankingThatEarnsCardData = [
     {
         cardTitle: 'Savings Plus Account',
@@ -16,6 +10,7 @@ export const bankingThatEarnsCardData = [
             'Free bill payments',
             'Free interac e-Transfers and more',
         ],
+        Label: 'Start earning',
     },
     {
         image: 'https://www.eqbank.ca/images/default-source/svgs/jointaccount_pink.svg?sfvrsn=b12a86d3_4',
@@ -27,6 +22,7 @@ export const bankingThatEarnsCardData = [
         ],
 
         subTitle: 'Earn up to 200×  more than other banks without all the nonsense.',
+        Label: 'Start earning',
     },
     {
         image: 'https://www.eqbank.ca/images/default-source/svgs/tfsa_pink.svg?sfvrsn=bd2a86d3_10',
@@ -38,6 +34,7 @@ export const bankingThatEarnsCardData = [
             'No minimum balance',
             'No-nonsense online sign-up in minutes',
         ],
+        Label: 'Start Investing',
     },
     {
         image: 'https://www.eqbank.ca/images/default-source/svgs/usd_pink.svg?sfvrsn=892a86d3_4',
@@ -49,6 +46,7 @@ export const bankingThatEarnsCardData = [
             'Seriously competitive exchange rate',
             'A fast, cheap way to send US dollars abroad',
         ],
+        Label: 'Start earning',
     },
 ];
 
@@ -64,6 +62,7 @@ export const investmentsThatGrowCardData = [
             'Break free of restrictions with our low minimum deposit',
             'Skip the hassle and buy a GIC in second',
         ],
+        Label: 'Start Investing',
     },
     {
         image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
@@ -76,6 +75,7 @@ export const investmentsThatGrowCardData = [
             'No minimum balance or other banking nonsense',
             'Online sign-up in minutes',
         ],
+        Label: 'Start Investing',
     },
     {
         image: 'https://www.eqbank.ca/images/default-source/svgs/savings_pink.svg?sfvrsn=812a86d3_4',
@@ -87,6 +87,7 @@ export const investmentsThatGrowCardData = [
             'No minimum balance',
             'No-nonsense online sign-up in minutes',
         ],
+        Label: 'Start Investing',
     },
 ];
 
@@ -101,6 +102,7 @@ export const aSmartWayToPayData = [
             'Send money direct from your account in a few easy steps',
             'Get your money there fast(some transfers are instant!)',
         ],
+        Label: 'Send money abroad',
     },
 ];
 
@@ -116,3 +118,11 @@ export const mortgageThatsWorthItData = [
         ],
     },
 ];
+
+
+ export const productCardTypes = [
+     'Banking that earns',
+     'Investments that grow',
+     'A smart way to pay',
+     "A mortgage that's worth it",
+ ];

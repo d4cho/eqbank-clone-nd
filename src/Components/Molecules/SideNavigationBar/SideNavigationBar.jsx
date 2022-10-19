@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SideNavigationBar.css";
-import Button from "../../Atoms/Button/Button";
+import Link from "../../Atoms/Link/Link";
 import SocialButton from "../../Atoms/SocialButton/SocialButton";
 
 function SideNavigationBar() {
@@ -198,7 +198,7 @@ function SideNavigationBar() {
 
         <div className="blocker-content">
           <div className="block-content-join-now">
-            <Button
+            <Link
               width="11.25rem"
               paddingTop="13px"
               paddingBottom="13px"

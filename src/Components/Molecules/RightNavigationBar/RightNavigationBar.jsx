@@ -1,8 +1,8 @@
 import React from "react";
 import "./RightNavigationBar.css";
-import Button from "../../Atoms/Button/Button";
+import Link from "../../Atoms/Link/Link";
 
-function RightNavigationBar(props) {
+function RightNavigationBar() {
   return (
     <>
       <div className="right-navigation-container">
@@ -22,7 +22,7 @@ function RightNavigationBar(props) {
         <a className="header-sign-in" href="/">
           Sign in
         </a>
-        <Button
+        <Link
           paddingTop="10px"
           paddingBottom="10px"
           Label="Join now"

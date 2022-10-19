@@ -90,93 +90,96 @@ function EmailVerification() {
     fifthPasscode.length > 0 &&
     sixthPasscode.length > 0;
   return (
-    <>
-      <OpeningAccountNavbarContent />
-      <OpeningAccountFormContent
-        dropShawdow={submitted && valid ? <BackDropForForms /> : null}
-        spinnerShow={
-          submitted && valid ? (
-            <div
-              className="spin"
-              style={{
-                position: "relative",
-                bottom: "200px",
-                left: "170px",
-                zIndex: "3000",
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "center",
-                width: "65px",
-                height: "65px",
-              }}
-            ></div>
-          ) : null
-        }
-        mainHeader={<h2>Check your inbox</h2>}
-        stepper={<Stepper activeStep={activeStep} />}
-        subText={
-          <p style={{ fontSize: ".875rem" }}>
-            A passcode was sent to <b>{values.email}</b>
-          </p>
-        }
-        passcodeTextFields={
-          <form action="" onSubmit={handleSubmit}>
-            <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
-              <PassCodeTextField
-                value={passcode.firstPasscode}
-                handleInputChange={firstPasscodeInputChange}
-              />
-              <PassCodeTextField
-                value={passcode.secondPasscode}
-                handleInputChange={secondPasscodeInputChange}
-              />
-              <PassCodeTextField
-                value={passcode.thirdPasscode}
-                handleInputChange={thirdPasscodeInputChange}
-              />
-              <PassCodeTextField
-                value={passcode.fourthPasscode}
-                handleInputChange={fourthPasscodeInputChange}
-              />
-              <PassCodeTextField
-                value={passcode.fifthPasscode}
-                handleInputChange={fifthPasscodeInputChange}
-              />
-              <PassCodeTextField
-                value={passcode.sixthPasscode}
-                handleInputChange={sixthPasscodeInputChange}
-              />
-            </div>
-            <div style={{ display: "flex", gap: "10px" }}>
-              <FormSubmissionButton
-                disabled={!enabled}
-                width="90px"
-                Label="Verify"
-                color="white"
-              />{" "}
-            </div>
-          </form>
-        }
-        textAndIcon={
-          <div
-          onClick={()=>{
-            navigate("/welcome")
-          }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "2px",
-              marginLeft: "3px",
-              color: "#c33991",
-              fontSize: "0.8rem",
-            }}
-          >
-            <EditIcon />
-            <p className="edit-email" style={{ cursor: "pointer", }}>Edit email</p>
-          </div>
-        }
-      />
-    </>
+      <div>
+          <OpeningAccountNavbarContent />
+          <OpeningAccountFormContent
+             dropShawdow={submitted && valid ? <BackDropForForms /> : null}
+              spinnerShow={
+                  submitted && valid ? (
+                      <div
+                          className='spin'
+                          style={{
+                              position: 'relative',
+                              bottom: '200px',
+                              left: '170px',
+                              zIndex: '3000',
+                              flexDirection: 'row',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              width: '65px',
+                              height: '65px',
+                          }}
+                      ></div>
+                  ) : null
+              }
+              mainHeader={<h2>Check your inbox</h2>}
+              stepper={<Stepper activeStep={activeStep} />}
+              subText={
+                  <p style={{ fontSize: '.875rem' }}>
+                      A passcode was sent to <b>{values.email}</b>
+                  </p>
+              }
+              passcodeTextFields={
+                  <form action='' onSubmit={handleSubmit}>
+                      <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+                          <PassCodeTextField
+                              value={passcode.firstPasscode}
+                              handleInputChange={firstPasscodeInputChange}
+                          />
+                          <PassCodeTextField
+                              value={passcode.secondPasscode}
+                              handleInputChange={secondPasscodeInputChange}
+                          />
+                          <PassCodeTextField
+                              value={passcode.thirdPasscode}
+                              handleInputChange={thirdPasscodeInputChange}
+                          />
+                          <PassCodeTextField
+                              value={passcode.fourthPasscode}
+                              handleInputChange={fourthPasscodeInputChange}
+                          />
+                          <PassCodeTextField
+                              value={passcode.fifthPasscode}
+                              handleInputChange={fifthPasscodeInputChange}
+                          />
+                          <PassCodeTextField
+                              value={passcode.sixthPasscode}
+                              handleInputChange={sixthPasscodeInputChange}
+                          />
+                      </div>
+                      <div style={{ display: 'flex', gap: '10px' }}>
+                          <FormSubmissionButton
+                              disabled={!enabled}
+                              width='90px'
+                              Label='Verify'
+                              color='white'
+                              marginTop='60px'
+                          />{' '}
+                      </div>
+                  </form>
+              }
+              textAndIcon={
+                  <div
+                      onClick={() => {
+                          navigate('/welcome');
+                      }}
+                      style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '2px',
+                          marginLeft: '3px',
+                          color: '#c33991',
+                          fontSize: '0.8rem',
+                      }}
+                  >
+                      <EditIcon />
+                      <p className='edit-email' style={{ cursor: 'pointer' }}>
+                          Edit email
+                      </p>
+                  </div>
+              }
+          />
+      </div>
   );
 }
 
