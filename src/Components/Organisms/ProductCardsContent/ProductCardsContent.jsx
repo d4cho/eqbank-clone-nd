@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './ProductCardsContent.css';
 import ProductCard from '../../Atoms/ProductCard/ProductCard';
-import { bankingThatEarnsCardData } from '../../../Data/Data';
-import { investmentsThatGrowCardData } from '../../../Data/Data';
-import { aSmartWayToPayData } from '../../../Data/Data';
-import { mortgageThatsWorthItData } from '../../../Data/Data';
+import { bankingThatEarnsCardData } from '../../../Data/CardsData';
+import { investmentsThatGrowCardData } from '../../../Data/CardsData';
+import { aSmartWayToPayData } from '../../../Data/CardsData';
+import { mortgageThatsWorthItData } from '../../../Data/CardsData';
 import SideStickyNavBar from '../../Molecules/SideStickyNavBar/SideStickyNavBar';
 
 import { Swiper, SwiperSlide } from 'swiper/react';

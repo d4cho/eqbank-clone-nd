@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductCardContent from '../Organisms/ProductCardsContent/ProductCardsContent';
 import Button from '../Atoms/Link/Link';
-import { productCardTypes } from '../../Data/Data';
+import { productCardTypes } from '../../Data/CardsData';
 
 function HomePage() {
  

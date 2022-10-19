@@ -5,13 +5,19 @@ function FilterButton({
     Label,
     width,
     backgroundColor,
-    border,
     color,
     marginTop,
     cursor,
     icon,
     onClick,
-    id
+    id,
+    borderBottom,
+    borderRadius,
+    borderBottomMobile,
+    matches,
+    borderLeft,
+    borderRight,
+    borderTop
 }) {
     return (
         <button
@@ -19,11 +25,15 @@ function FilterButton({
             className='filter-button'
             style={{
                 width: width,
-                backgroundColor:backgroundColor,
-                border: border,
+                backgroundColor: backgroundColor,
+                borderTop:matches? borderTop: null,
+                borderLeft:matches? borderLeft: null,
+                borderRight: matches? borderRight: null,
                 color: color,
                 marginTop: marginTop,
                 cursor: cursor,
+                borderBottom: matches ? borderBottom : borderBottomMobile,
+                borderRadius: borderRadius,
             }}
         >
             <div
@@ -32,7 +42,7 @@ function FilterButton({
                     alignItems: 'center',
                     gap: '10px',
                     justifyContent: 'center',
-                    fontWeight:'bold'
+                    fontWeight: 'bold',
                 }}
             >
                 {' '}

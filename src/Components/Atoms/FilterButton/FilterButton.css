@@ -1,14 +1,14 @@
 .filter-button {
     padding: 0.8125rem 1.5rem;
     color: white;
-    border-radius: 5px !important;
     min-height: 46px;
     line-height: 1.25rem;
     font-family: DinotBold, DinotRegular, Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
         Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji,
         Segoe UI Symbol, Noto Color Emoji;
     font-size: 0.9rem;
-    border: 1px solid #a0a0a0;
     background-color: white;
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }
-
