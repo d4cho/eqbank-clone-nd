@@ -5,7 +5,10 @@ import Stepper from '../Molecules/Stepper/Stepper.jsx';
 import { StepperContext } from '../../Context/StepperContext';
 import SelectField from '../Atoms/SelectField/SelectField';
 import { provincesData } from '../../Data/Provinces';
-import Label from '../Atoms/Label/Label';
+import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
+import RadioButton from '../Atoms/RadioButton/RadioButton';
+import { occupationData } from '../../Data/Occupation';
+
 // import { useNavigate } from 'react-router-dom';
 // import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 // import Spinner from '../Atoms/Spinner/Spinner';
@@ -13,13 +16,18 @@ import Label from '../Atoms/Label/Label';
 function FinalizeAccount() {
     const { activeStep } = useContext(StepperContext);
     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const [occupation, setOccupation] = useState('Personal Savings');
     //  const [isSubmitted, setIsSubmitted] = useState(false);
+
+    console.log(occupation)
 
     useEffect(() => {
         window
             .matchMedia('(min-width: 1020px)')
             .addEventListener('change', (e) => setMatches(e.matches));
     }, []);
+
+  
 
     return (
         <div>
@@ -46,7 +54,13 @@ function FinalizeAccount() {
                 }
                 form={
                     <form action=''>
-                        <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                gap: '10px',
+                            }}
+                        >
                             <div
                                 style={{
                                     display: 'flex',
@@ -59,12 +73,49 @@ function FinalizeAccount() {
                                     Occupation
                                 </label>
                                 <SelectField
-                                    width={matches ? '25.78rem' : '20.78rem'}
-                                    provincesData={provincesData}
-                                    placeholder="Select occupation"
+                                    width={matches ? '22.78rem' : '100%'}
+                                    provincesData={occupationData}
+                                    placeholder='Select occupation'
                                 />
                             </div>
                         </div>
+                        <p style={{ fontSize: '0.9rem', fontWeight: '600', marginTop: '20px' }}>
+                            How do you intend to use this account?
+                        </p>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignContent: 'center',
+                                gap: '10px',
+                            }}
+                        >
+                            <RadioButton
+                                value={'Personal Savings'}
+                                label='Personal Savings'
+                                handleChange={(e) => setOccupation(e.target.value)}
+                                checked={occupation === 'Personal Savings'}
+                            />
+                            <RadioButton
+                                value={'Deposits / Living Expenses'}
+                                label='Deposits / Living Expenses'
+                                handleChange={(e) => setOccupation(e.target.value)}
+                                checked={occupation === 'Deposits / Living Expenses'}
+                            />
+                            <RadioButton
+                                value={'Investment'}
+                                label='Investment'
+                                handleChange={(e) => setOccupation(e.target.value)}
+                                checked={occupation === 'Investment'}
+                            />
+                        </div>
+
+                        <FormSubmissionButton
+                            width={matches ? '360px' : '100%'}
+                            Label='Continue'
+                            color='white'
+                            marginTop='40px'
+                        />
                     </form>
                 }
             />

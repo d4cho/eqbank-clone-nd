@@ -1,0 +1,35 @@
+.radio-button-div {
+    font-family: Open Sans, Dinot Regular, DinotRegular, -apple-system, BlinkMacSystemFont, Segoe UI,
+        Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+        Segoe UI Symbol, Noto Color Emoji;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+input[type='radio'] {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type='radio']:checked + .radio-button-span:before {
+    box-shadow: inset 0 0 0 0.4375em #c33991;
+}
+
+.radio-button-span {
+    display: flex;
+    align-items: center;
+}
+
+.radio-button-span::before {
+    display: flex;
+    flex-shrink: 0;
+    content: '';
+    background-color: #fff;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em grey;
+    cursor: pointer;
+}
