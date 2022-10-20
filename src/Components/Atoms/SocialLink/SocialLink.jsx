@@ -1,7 +1,7 @@
 import React from 'react';
-import './SocialButton.css';
+import './SocialLink.css';
 
-function SocialButton({ img }) {
+function SocialLink({ img }) {
     return (
         <a href='/'>
             <img
@@ -17,4 +17,4 @@ function SocialButton({ img }) {
     );
 }
 
-export default SocialButton;
+export default SocialLink;

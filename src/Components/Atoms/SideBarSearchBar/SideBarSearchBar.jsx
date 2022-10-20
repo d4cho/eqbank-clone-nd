@@ -1,5 +1,5 @@
 import React from 'react';
-import './SideBarMobileSearchBar.css';
+import './SideBarSearchBar.css';
 
 function SideBarMobileSearchBar() {
     return (
