@@ -16,29 +16,31 @@ function NavBarDropdownContent() {
                     <div className='link-drop-down'>
                         <h2 className='explore-products-title'>Explore products for...</h2>
                         <ul className='main-content'>
-                            <div>
-                                <li onClick={everydayBankingClick}>Everyday Banking</li>
+                            <li onClick={everydayBankingClick}>
+                                Everyday Banking{' '}
                                 <div
                                     className={
                                         subMenuTitle === 'Everyday Banking' ? 'check-div' : ''
                                     }
                                 />
-                            </div>
+                            </li>
 
-                            <div>
-                                <li onClick={investementsClick}>Investments</li>
+                            <li onClick={investementsClick}>
+                                Investments{' '}
                                 <div
                                     className={subMenuTitle === 'Investments' ? 'check-div' : ''}
                                 />
-                            </div>
-                            <div>
-                                <li onClick={paymentsClick}>Payments</li>
+                            </li>
+
+                            <li onClick={paymentsClick}>
+                                Payments{' '}
                                 <div className={subMenuTitle === 'Payments' ? 'check-div' : ''} />
-                            </div>
-                            <div>
-                                <li onClick={borrowingClick}>Borrowing</li>
+                            </li>
+
+                            <li onClick={borrowingClick}>
+                                Borrowing{' '}
                                 <div className={subMenuTitle === 'Borrowing' ? 'check-div' : ''} />
-                            </div>
+                            </li>
                         </ul>
                     </div>
                 </>
