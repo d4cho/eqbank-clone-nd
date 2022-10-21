@@ -1,6 +1,5 @@
 import React from 'react';
 import './RadioButton.css';
-import Label from '../Label/Label';
 
 function RadioButton({ label, value, handleChange, checked }) {
     return (
