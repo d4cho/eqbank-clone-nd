@@ -9,6 +9,7 @@ import { StepperContext } from "../../Context/StepperContext";
 import { useNavigate } from "react-router-dom";
 import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms";
 import EditIcon from '@mui/icons-material/Edit';
+import Spinner from "../Atoms/Spinner/Spinner";
 
 function EmailVerification() {
   const { values } = useContext(FormContext);
@@ -93,23 +94,16 @@ function EmailVerification() {
       <div>
           <OpeningAccountNavbarContent />
           <OpeningAccountFormContent
-             dropShawdow={submitted && valid ? <BackDropForForms /> : null}
+              dropShawdow={submitted && valid ? <BackDropForForms /> : null}
               spinnerShow={
                   submitted && valid ? (
-                      <div
-                          className='spin'
-                          style={{
-                              position: 'relative',
-                              bottom: '200px',
-                              left: '170px',
-                              zIndex: '3000',
-                              flexDirection: 'row',
-                              display: 'flex',
-                              justifyContent: 'center',
-                              width: '65px',
-                              height: '65px',
-                          }}
-                      ></div>
+                      <Spinner
+                          position='relative'
+                          bottom='200px'
+                          left='170px'
+                          height='65px'
+                          width='65px'
+                      />
                   ) : null
               }
               mainHeader={<h2>Check your inbox</h2>}

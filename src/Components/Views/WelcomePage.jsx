@@ -12,6 +12,9 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms.jsx';
 import { FormContext } from '../../Context/FormContext.js';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import Spinner from '../Atoms/Spinner/Spinner.jsx';
+import Label from '../Atoms/Label/Label.jsx';
+import SignUpFAQ from '../Atoms/SignUpFAQ/SignUpFAQ.jsx';
 
 import { StepperContext } from '@mui/material';
 function WelcomePage() {
@@ -60,23 +63,16 @@ function WelcomePage() {
         <div>
             <OpeningAccountNavbarContent />
             <OpeningAccountFormContent
-             dropShawdow={submitted && valid ? <BackDropForForms /> : null}
+                dropShawdow={submitted && valid ? <BackDropForForms /> : null}
                 spinnerShow={
                     submitted && valid ? (
-                        <div
-                            className='spin'
-                            style={{
-                                position: 'relative',
-                                bottom: '500px',
-                                left: '170px',
-                                zIndex: '3000',
-                                flexDirection: 'row',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                width: '65px',
-                                height: '65px',
-                            }}
-                        ></div>
+                        <Spinner
+                            position='relative'
+                            bottom='500px'
+                            left='170px'
+                            height='65px'
+                            width='65px'
+                        />
                     ) : null
                 }
                 savingPlusText={
@@ -107,7 +103,7 @@ function WelcomePage() {
                     <form action='' onSubmit={handleSubmit}>
                         <h4>Let's create your profile</h4>
                         <div className='text-field-container'>
-                            <label htmlFor=''>First name</label>
+                            <Label Label='First name' />
                             <TextField
                                 placeholder='Enter your first name'
                                 value={values.firstName}
@@ -128,7 +124,7 @@ function WelcomePage() {
                             ) : null}
                         </div>
                         <div className='text-field-container'>
-                            <label htmlFor=''>Last name</label>
+                            <Label Label='Last name' />
                             <TextField
                                 placeholder='Enter your last name'
                                 value={values.lastName}
@@ -150,7 +146,7 @@ function WelcomePage() {
                             ) : null}
                         </div>
                         <div className='text-field-container'>
-                            <label htmlFor=''>Email Address</label>
+                            <Label Label='Email Address' />
                             <TextField
                                 placeholder='Enter your email'
                                 value={values.email}
@@ -253,8 +249,12 @@ function WelcomePage() {
                                 marginTop: '10px',
                             }}
                         >
-                            <HelpOutlineIcon style={{ color: '#c73391' }} />
-                            <p style={{ fontSize: '0.8rem', color: '#cb3694' }}>Sign-up FAQ</p>
+                            <SignUpFAQ
+                                fontSize='0.8rem'
+                                color='#cb3694'
+                                Label='Sign-up FAQ'
+                                icon={<HelpOutlineIcon style={{ color: '#c73391' }} />}
+                            />
                         </div>
                     </form>
                 }

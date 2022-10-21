@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './OpeningAccountFormContent.css';
 
-function OpeningAccountFormContent(props) {
-    const savingPlusText = props.savingPlusText;
-    const mainHeader = props.mainHeader;
-    const stepper = props.stepper;
-    const textAndIcon = props.textAndIcon;
-    const form = props.form;
-     const dropShawdow = props.dropShawdow;
-    const spinnerShow = props.spinnerShow;
-    const subText = props.subText;
-    const passcodeTextFields = props.passcodeTextFields;
-    const formButton = props.formButton;
-
+function OpeningAccountFormContent({
+    savingPlusText,
+    mainHeader,
+    stepper,
+    textAndIcon,
+    form,
+    dropShawdow,
+    spinnerShow,
+    subText,
+    passcodeTextFields,
+    formButton,
+}) {
     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
 
     useEffect(() => {

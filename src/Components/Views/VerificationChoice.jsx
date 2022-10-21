@@ -8,13 +8,19 @@ import { filterButtonDesktop } from '../../Data/ButtonsData';
 import { filterButtonMobile } from '../../Data/ButtonsData';
 import { filteredDataContent } from '../../Data/FilteredDataContent';
 import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
+import { useNavigate } from 'react-router-dom';
+import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
+import Spinner from '../Atoms/Spinner/Spinner';
+import SignUpFAQ from '../Atoms/SignUpFAQ/SignUpFAQ';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 function VerificationChoice() {
-    const { activeStep } = useContext(StepperContext);
+    const { activeStep, nextStep } = useContext(StepperContext);
     const [active, setActive] = useState(1);
     const filteredData = filteredDataContent.filter((item) => item.id === 1);
     const [state, setState] = useState(filteredData);
     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
         window
@@ -32,11 +38,36 @@ function VerificationChoice() {
             setState(filteredData);
         }
     };
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        setTimeout(() => {
+            navigate('/welcome/profile/FinalizeAccount');
+            nextStep();
+        }, 1500);
+        setIsSubmitted(true);
+    };
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (newWindow) newWindow.opener = null;
+    };
 
     return (
         <div>
             <OpeningAccountNavbarContent />
             <OpeningAccountFormContent
+                dropShawdow={isSubmitted ? <BackDropForForms /> : null}
+                spinnerShow={
+                    isSubmitted ? (
+                        <Spinner
+                            position='relative'
+                            bottom='200px'
+                            left='170px'
+                            height='65px'
+                            width='65px'
+                        />
+                    ) : null
+                }
                 mainHeader={<h2>We need to see some ID</h2>}
                 stepper={<Stepper activeStep={activeStep} />}
                 subText={
@@ -118,21 +149,29 @@ function VerificationChoice() {
                         )}
                         {state.map((data, idx) => (
                             <div key={idx}>
-                                {data.listItems.map((item, idx) => (
-                                    <>
-                                        {' '}
-                                        <div key={idx}>
-                                            <ul>
-                                                <li>
-                                                    <p>{item.suggestionOne}</p>
-                                                    <p>{item.suggestionTwo}</p>
-                                                    <p>{item.suggestionThree}</p>
-                                                    <p>{item.whatIDNeed}</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </>
-                                ))}
+                                <div key={idx}>
+                                    <ol className='data-list-order'>
+                                        {data.listItems.map((item, idx) => (
+                                            <li className='data-list' key={idx}>
+                                                {item.suggestionOne}
+                                                {item.suggestionTwo}
+                                                {item.suggestionThree}
+                                                <p
+                                                    style={{
+                                                        color: '#c33991',
+                                                        position: 'relative',
+                                                        left: '35px',
+                                                        bottom: '10px',
+                                                        fontSize: '0.9rem',
+                                                    }}
+                                                >
+                                                    {' '}
+                                                    {item.whatIDNeed}
+                                                </p>
+                                            </li>
+                                        ))}
+                                    </ol>
+                                </div>
                                 <hr
                                     style={{
                                         border: 0,
@@ -144,11 +183,14 @@ function VerificationChoice() {
                                         textAlign: 'center',
                                     }}
                                 >
-                                    <div style={{ color: '#c33991'}}>{data.icon}</div>
+                                    <div style={{ color: '#c33991' }}>{data.icon}</div>
                                     <p>{data.mainText}</p>
-                                    <a href={data.href} style={{ color: '#c33991' }}>
+                                    <p
+                                        onClick={() => openInNewTab(data.href)}
+                                        style={{ color: '#c33991', cursor: 'pointer' }}
+                                    >
                                         {data.subText}
-                                    </a>
+                                    </p>
                                 </div>
                                 <hr
                                     style={{
@@ -161,7 +203,14 @@ function VerificationChoice() {
                                     width='170px'
                                     Label="Ok let's do this"
                                     color='white'
+                                    handleSubmit={handleSubmit}
                                 />{' '}
+                                <SignUpFAQ
+                                    fontSize='0.8rem'
+                                    color='#cb3694'
+                                    Label='Sign-up FAQ'
+                                    icon={<HelpOutlineIcon style={{ color: '#c73391' }} />}
+                                />
                             </div>
                         ))}
                     </>

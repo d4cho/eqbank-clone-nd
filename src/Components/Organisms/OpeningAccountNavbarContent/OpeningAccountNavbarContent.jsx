@@ -7,6 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { OpeningAccountNavbarTogglerContext } from "../../../Context/OpeningAccountNavbarToggler";
 
 import OpeningAccountNavbarDropdown from "../OpeningAccountNavbarDropdown/OpeningAccountNavbarDropdown";
+import Spinner from "../../Atoms/Spinner/Spinner";
 
 function OpeningAccountNavbarContent() {
   const [spinner, setSpinner] = useState(true);
@@ -25,27 +26,39 @@ function OpeningAccountNavbarContent() {
     OpeningAccountNavbarTogglerContext
   );
   return (
-    <>
-    {show && <div className="wrapper">
-        <div  className="pro progress"></div>
-      </div>}
-      <nav className="opening-account-navbar-parent">
-        <div className="opening-account-container">
-          <EQBankLogo height="39px" width="90px" />
-          <OpeningAccountNavbar />
-        </div>
+      <>
+          {show && (
+              <div className='wrapper'>
+                  <div className='pro progress'></div>
+              </div>
+          )}
+          <nav className='opening-account-navbar-parent'>
+              <div className='opening-account-container'>
+                  <EQBankLogo height='39px' width='90px' />
+                  <OpeningAccountNavbar />
+              </div>
 
-        <div className="opening-account-container-mobile">
-          <EQBankLogo height="39px" width="90px" />
-          <div style={{ cursor: "pointer" }} onClick={openCloseMenuToggler}>
-            {openCloseMenu === false ? <MenuIcon /> : <CloseIcon />}
-          </div>
-        </div>
+              <div className='opening-account-container-mobile'>
+                  <EQBankLogo height='39px' width='90px' />
+                  <div style={{ cursor: 'pointer' }} onClick={openCloseMenuToggler}>
+                      {openCloseMenu === false ? <MenuIcon /> : <CloseIcon />}
+                  </div>
+              </div>
 
-        {spinner && <div className="parent-spinner"><div className={spinner ? "spin" : ""}></div></div> }
-      </nav>
-     {openCloseMenu === true?<OpeningAccountNavbarDropdown/> : null}
-    </>
+              {spinner && (
+                  <div className='parent-spinner'>
+                      <Spinner
+                          position='absolute'
+                          bottom='15px'
+                          right='0px'
+                          height='25px'
+                          width='25px'
+                      />
+                  </div>
+              )}
+          </nav>
+          {openCloseMenu === true ? <OpeningAccountNavbarDropdown /> : null}
+      </>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './SelectField.css';
 
-function SelectField({ width, provincesData, value, handleInputChange }) {
+function SelectField({ width, provincesData, value, handleInputChange, placeholder }) {
     return (
         <select
             value={value}
@@ -10,7 +10,7 @@ function SelectField({ width, provincesData, value, handleInputChange }) {
             className='select-field'
         >
             <option value='' disabled selected>
-                Select one
+                {placeholder}
             </option>
             {provincesData.map((data, index) => {
                 return (

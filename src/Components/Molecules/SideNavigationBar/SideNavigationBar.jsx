@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SideNavigationBar.css";
 import Link from "../../Atoms/Link/Link";
-import SocialButton from "../../Atoms/SocialButton/SocialButton";
+import SocialButton from "../../Atoms/SocialLink/SocialLink";
 
 function SideNavigationBar() {
   const [personalBankingBar, setPersonalBankingBar] = useState(false);

@@ -1,9 +1,19 @@
 import React from 'react';
 import './FormSubmissionButton.css';
 
-function FormSubmissionButton({ Label, width, backgroundColor, border, color, disabled, marginTop }) {
+function FormSubmissionButton({
+    Label,
+    width,
+    backgroundColor,
+    border,
+    color,
+    disabled,
+    marginTop,
+    handleSubmit,
+}) {
     return (
         <button
+            onClick={handleSubmit}
             disabled={disabled}
             style={{
                 width: width,
@@ -11,7 +21,7 @@ function FormSubmissionButton({ Label, width, backgroundColor, border, color, di
                 border: border,
                 color: color,
                 cursor: disabled ? '' : 'pointer',
-                marginTop:marginTop
+                marginTop: marginTop,
             }}
             className='form-submission-button'
         >

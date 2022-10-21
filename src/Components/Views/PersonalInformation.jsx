@@ -10,9 +10,11 @@ import { provincesData } from '../../Data/Provinces';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import PersonalInformationContent from '../Molecules/PersonalInformationContent/PersonalInformationContent';
 import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
+import Spinner from '../Atoms/Spinner/Spinner';
+import Label from '../Atoms/Label/Label';
 
 function PersonalInformation() {
-    const { activeStep, nextStep } = useContext(StepperContext);
+    const { activeStep } = useContext(StepperContext);
     const [submitted, setSubmitted] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [address, setAddress] = useState(false);
@@ -80,20 +82,13 @@ function PersonalInformation() {
                 dropShawdow={isSubmitted && address ? <BackDropForForms /> : null}
                 spinnerShow={
                     isSubmitted && address ? (
-                        <div
-                            className='spin'
-                            style={{
-                                position: 'relative',
-                                bottom: '200px',
-                                left: '170px',
-                                zIndex: '3000',
-                                flexDirection: 'row',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                width: '65px',
-                                height: '65px',
-                            }}
-                        ></div>
+                        <Spinner
+                            position='relative'
+                            bottom='200px'
+                            left='170px'
+                            height='65px'
+                            width='65px'
+                        />
                     ) : null
                 }
                 stepper={<Stepper activeStep={activeStep} />}
@@ -114,9 +109,7 @@ function PersonalInformation() {
                     ) : (
                         <form action='' onSubmit={handleSubmit}>
                             <div className='text-field-container'>
-                                <label style={{ fontSize: '0.8rem', fontWeight: '600' }}>
-                                    Street Address
-                                </label>
+                                <Label Label='Street Address' fontSize='0.8rem' fontWeight='600' />
                                 <TextField
                                     width={matches ? '27rem' : null}
                                     value={personalValues.streetAddress}
@@ -176,12 +169,11 @@ function PersonalInformation() {
                                         marginTop: '10px',
                                     }}
                                 >
-                                    <label
-                                        style={{ fontSize: '0.8rem', fontWeight: '600' }}
-                                        htmlFor=''
-                                    >
-                                        Address Line 2(optional)
-                                    </label>
+                                    <Label
+                                        Label='Address Line 2(optional)'
+                                        fontSize='0.8rem'
+                                        fontWeight='600'
+                                    />
                                     <TextField
                                         width={matches ? '12.78rem' : '20.78rem'}
                                         value={personalValues.streetAddressLineTwo}
@@ -196,12 +188,7 @@ function PersonalInformation() {
                                         marginTop: '10px',
                                     }}
                                 >
-                                    <label
-                                        style={{ fontSize: '0.8rem', fontWeight: '600' }}
-                                        htmlFor=''
-                                    >
-                                        City
-                                    </label>
+                                    <Label Label='City' fontSize='0.8rem' fontWeight='600' />
                                     <TextField
                                         width={matches ? '12.78rem' : '20.78rem'}
                                         value={personalValues.city}
@@ -240,17 +227,13 @@ function PersonalInformation() {
                                         marginTop: '10px',
                                     }}
                                 >
-                                    <label
-                                        style={{ fontSize: '0.8rem', fontWeight: '600' }}
-                                        htmlFor=''
-                                    >
-                                        Province
-                                    </label>
+                                    <Label Label='Province' fontSize='0.8rem' fontWeight='600' />
                                     <SelectField
                                         width={matches ? '13.78rem' : '20.78rem'}
                                         provincesData={provincesData}
                                         value={personalValues.province}
                                         handleInputChange={provinceInputChange}
+                                        placeholder='Select one'
                                     />
                                     {submitted && !personalValues.province ? (
                                         <div
@@ -282,12 +265,7 @@ function PersonalInformation() {
                                         marginTop: '10px',
                                     }}
                                 >
-                                    <label
-                                        style={{ fontSize: '0.8rem', fontWeight: '600' }}
-                                        htmlFor=''
-                                    >
-                                        Postal Code
-                                    </label>
+                                    <Label Label='Postal Code' fontSize='0.8rem' fontWeight='600' />
                                     <TextField
                                         width={matches ? '12.78rem' : '20.78rem'}
                                         value={personalValues.postalCode}

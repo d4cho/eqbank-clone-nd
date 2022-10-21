@@ -4,7 +4,7 @@ import Link from "../../Atoms/Link/Link";
 import LeftNavigationBar from "../../Molecules/LeftNavigationBar/LeftNavigationBar";
 import RightNavigationBar from "../../Molecules/RightNavigationBar/RightNavigationBar";
 import { SearchBarContext } from "../../../Context/SearchBarContext";
-import SearchBar from "../../Atoms/SearchBar/SearchBar";
+import SearchBar from "../../Atoms/SlideInSearchBar/SlideInSearchBar";
 import { SideBarToggleContext } from "../../../Context/SideBarToggler";
 import NavBarDropdownContent from "../../Molecules/NavBarDropDownContent/NavBarDropDownContent";
 import MiniCardsContent from "../../Molecules/MiniCardsContent/MiniCardsContent";

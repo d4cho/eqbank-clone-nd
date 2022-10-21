@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./SideBarDrawer.css";
 import { SideBarToggleContext } from "../../../Context/SideBarToggler";
-import SideBarMobileSearchBar from "../../Atoms/SideBarMobileSearchBar/SideBarMobileSearchBar";
+import SideBarMobileSearchBar from "../../Atoms/SideBarSearchBar/SideBarSearchBar";
 import SideNavigationBar from "../../Molecules/SideNavigationBar/SideNavigationBar";
 import Backdrop from "../Backdrop/Backdrop";
 

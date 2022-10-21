@@ -13,6 +13,7 @@ import FormContextProvider from './Context/FormContext';
 import StepperContextProvider from './Context/StepperContext';
 import PersonalInformation from './Components/Views/PersonalInformation';
 import VerificationChoice from './Components/Views/VerificationChoice';
+import FinalizeAccount from './Components/Views/FinalizeAccount';
 
 function App() {
     return (
@@ -44,6 +45,10 @@ function App() {
                                         <Route
                                             path='/welcome/profile/verificationChoice'
                                             element={<VerificationChoice />}
+                                        ></Route>
+                                        <Route
+                                            path='/welcome/profile/FinalizeAccount'
+                                            element={<FinalizeAccount  />}
                                         ></Route>
                                     </Routes>
                                 </OpeningAccountNavbarTogglerContextProvider>
