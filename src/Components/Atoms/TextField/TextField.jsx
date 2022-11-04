@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TextField.css';
 
 function TextField({
@@ -10,6 +10,7 @@ function TextField({
     onBlur,
     submitted,
     type,
+    checked,
 }) {
     return (
         <>
@@ -25,6 +26,7 @@ function TextField({
                 onChange={handleInputChange}
                 onBlur={onBlur}
                 type={type}
+                checked={checked}
             />
         </>
     );
