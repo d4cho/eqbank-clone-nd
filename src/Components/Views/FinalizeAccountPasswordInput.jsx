@@ -13,6 +13,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import DoneIcon from '@mui/icons-material/Done';
 import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 import Spinner from '../Atoms/Spinner/Spinner';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 function FinalizeAccountPasswordInput() {
     const { activeStep, nextStep } = useContext(StepperContext);
@@ -20,6 +21,8 @@ function FinalizeAccountPasswordInput() {
     const [password, setPassword] = useState('');
     const [passwordAgain, setPasswordAgain] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [passwordShown, setPasswordShown] = useState(false);
+    const [passwordConfirmShown, setComfirmPasswordShown] = useState(false);
 
     useEffect(() => {
         window
@@ -31,10 +34,10 @@ function FinalizeAccountPasswordInput() {
         event.preventDefault();
         if (password.length > 0 && passwordAgain.length > 0 && password === passwordAgain) {
             setTimeout(() => {
-                navigate('/welcome/profile/PersonalInformation');
+                navigate('/welcome/profile/FinalizeAccount/AccountAgreement');
                 nextStep();
             }, 1500);
-             setIsSubmitted(true);
+            setIsSubmitted(true);
         }
     };
 
@@ -73,7 +76,22 @@ function FinalizeAccountPasswordInput() {
                             <TextField
                                 width={matches ? '20.78rem' : '90%'}
                                 handleInputChange={(e) => setPassword(e.target.value)}
+                                type={passwordShown ? 'text' : 'password'}
                             />
+                            <div
+                                style={{
+                                    position: 'relative',
+                                    left: '320px',
+                                    bottom: '45px',
+                                    cursor: 'pointer',
+                                }}
+                            >
+                                <VisibilityOffIcon
+                                    title={passwordShown ? 'Hide password' : 'Show password'}
+                                    onClick={() => setPasswordShown((prevState) => !prevState)}
+                                    fontSize='small'
+                                />
+                            </div>
                         </div>
                         <div
                             style={{
@@ -108,20 +126,31 @@ function FinalizeAccountPasswordInput() {
                                 flexDirection: 'column',
                                 gap: '10px',
                                 marginTop: '10px',
+                                cursor: 'pointer',
                             }}
                         >
                             <Label Label='Confirm password' fontSize='0.8rem' fontWeight='600' />
                             <TextField
                                 width={matches ? '20.78rem' : '90%'}
                                 handleInputChange={(e) => setPasswordAgain(e.target.value)}
+                                type={passwordConfirmShown ? 'text' : 'password'}
                             />
+                            <div style={{ position: 'relative', left: '320px', bottom: '45px' }}>
+                                <VisibilityOffIcon
+                                    title={passwordConfirmShown ? 'Hide password' : 'Show password'}
+                                    onClick={() =>
+                                        setComfirmPasswordShown((prevState) => !prevState)
+                                    }
+                                    fontSize='small'
+                                />
+                            </div>
                         </div>
 
                         <FormSubmissionButton
                             width='120px'
                             Label='Continue'
                             color='white'
-                            marginTop='30px'
+                            marginTop='10px'
                         />
                     </form>
                 }

@@ -105,7 +105,17 @@
     margin-right: 10px;
 }
 
-.passwordCheck{
+.passwordCheck {
     font-weight: 400;
-    font-size:  0.9rem;
+    font-size: 0.9rem;
+}
+.agreement-list {
+    margin-top: 15px;
+    color: #c33991;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.agreement-list:hover {
+    text-decoration: underline;
 }

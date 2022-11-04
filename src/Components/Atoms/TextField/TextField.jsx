@@ -1,7 +1,16 @@
 import React from 'react';
 import './TextField.css';
 
-function TextField({ placeholder, value, handleInputChange, width, touched, onBlur, submitted }) {
+function TextField({
+    placeholder,
+    value,
+    handleInputChange,
+    width,
+    touched,
+    onBlur,
+    submitted,
+    type,
+}) {
     return (
         <>
             <input
@@ -11,11 +20,11 @@ function TextField({ placeholder, value, handleInputChange, width, touched, onBl
                     backgroundColor: touched || submitted ? '#fcedec' : null,
                 }}
                 placeholder={placeholder}
-                type='text'
                 className='text-field'
                 value={value}
                 onChange={handleInputChange}
                 onBlur={onBlur}
+                type={type}
             />
         </>
     );
