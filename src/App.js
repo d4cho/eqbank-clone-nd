@@ -14,6 +14,7 @@ import StepperContextProvider from './Context/StepperContext';
 import PersonalInformation from './Components/Views/PersonalInformation';
 import VerificationChoice from './Components/Views/VerificationChoice';
 import FinalizeAccount from './Components/Views/FinalizeAccount';
+import FinalizeAccountPasswordInput from './Components/Views/FinalizeAccountPasswordInput';
 
 function App() {
     return (
@@ -48,7 +49,11 @@ function App() {
                                         ></Route>
                                         <Route
                                             path='/welcome/profile/FinalizeAccount'
-                                            element={<FinalizeAccount  />}
+                                            element={<FinalizeAccount />}
+                                        ></Route>
+                                        <Route
+                                            path='/welcome/profile/FinalizeAccount/password'
+                                            element={<FinalizeAccountPasswordInput  />}
                                         ></Route>
                                     </Routes>
                                 </OpeningAccountNavbarTogglerContextProvider>

@@ -21,9 +21,9 @@ function WelcomePage() {
     const [toggle, setToggle] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [valid, setValid] = useState(false);
-    const [message, setMessage] = useState('');
     const navigate = useNavigate();
     const { activeStep } = useContext(StepperContext);
+    const [touched, setTouched] = React.useState(false);
 
     const {
         values,
@@ -53,9 +53,7 @@ function WelcomePage() {
                 navigate('/welcome/profile/emailVerification');
             }, 1500);
             setValid(true);
-        } else {
-            setMessage('Please enter a valid email address.');
-        }
+        } 
 
         setSubmitted(true);
     };
@@ -109,8 +107,11 @@ function WelcomePage() {
                                 value={values.firstName}
                                 handleInputChange={handleFirstNameInputChange}
                                 width={matches ? '18.78rem' : null}
+                                onBlur={() => setTouched(true)}
+                                touched={touched}
+                                submitted={submitted}
                             />
-                            {submitted && !values.firstName ? (
+                            {( touched && !values.firstName) || submitted? (
                                 <p
                                     style={{
                                         color: '#cb061d',
@@ -130,9 +131,11 @@ function WelcomePage() {
                                 value={values.lastName}
                                 handleInputChange={handleLastNameInputChange}
                                 width={matches ? '18.78rem' : null}
-                                backgroundColor='red'
+                                onBlur={() => setTouched(true)}
+                                touched={touched}
+                                submitted={submitted}
                             />
-                            {submitted && !values.lastName ? (
+                            {(touched && !values.lastName) || submitted ? (
                                 <p
                                     style={{
                                         color: '#cb061d',
@@ -152,12 +155,15 @@ function WelcomePage() {
                                 value={values.email}
                                 handleInputChange={handleEmailInputChange}
                                 width={matches ? '18.78rem' : null}
+                                onBlur={() => setTouched(true)}
+                                touched={touched}
+                                submitted={submitted}
                             />
                         </div>
                         <p style={{ fontSize: '0.70rem', color: '#6d6761' }}>
                             A verification passcode will be sent to this address.
                         </p>
-                        {submitted && !values.email ? (
+                        {(touched && !values.email) || submitted ? (
                             <p
                                 style={{
                                     color: '#cb061d',
@@ -169,7 +175,7 @@ function WelcomePage() {
                                 This field is required
                             </p>
                         ) : null}
-                        {message && !regex.test(values.email) && (
+                        {touched && !regex.test(values.email)?
                             <div
                                 style={{
                                     display: 'flex',
@@ -180,9 +186,9 @@ function WelcomePage() {
                                 }}
                             >
                                 <ErrorOutlineIcon />
-                                {message}
+                               invalid email address
                             </div>
-                        )}
+                        : null}
                         <p>
                             By providing the above information, you agree to the terms of our{' '}
                             <b style={{ color: '#c33991' }}>Privacy Agreement</b>{' '}
