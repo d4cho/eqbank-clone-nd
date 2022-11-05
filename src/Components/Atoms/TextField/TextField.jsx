@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TextField.css';
 
-function TextField({ placeholder, value, handleInputChange, width }) {
+function TextField({
+    placeholder,
+    value,
+    handleInputChange,
+    width,
+    type,
+    checked,
+}) {
     return (
         <>
             <input
@@ -9,10 +16,11 @@ function TextField({ placeholder, value, handleInputChange, width }) {
                     width: width,
                 }}
                 placeholder={placeholder}
-                type='text'
                 className='text-field'
                 value={value}
                 onChange={handleInputChange}
+                type={type}
+                checked={checked}
             />
         </>
     );

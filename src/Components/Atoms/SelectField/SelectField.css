@@ -12,3 +12,6 @@ option[value=''][disabled] {
     display: none;
 }
 
+option {
+    color: red;
+}
