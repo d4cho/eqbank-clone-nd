@@ -16,6 +16,7 @@ import VerificationChoice from './Components/Views/VerificationChoice';
 import FinalizeAccount from './Components/Views/FinalizeAccount';
 import FinalizeAccountPasswordInput from './Components/Views/FinalizeAccountPasswordInput';
 import FinalizeAccountAgreements from './Components/Views/FinalizeAccountAgreements';
+import FinalizeVerifyIdentity from './Components/Views/FinalizeVerifyIdentity';
 
 function App() {
     return (
@@ -58,7 +59,11 @@ function App() {
                                         ></Route>
                                         <Route
                                             path='/welcome/profile/FinalizeAccount/AccountAgreement'
-                                            element={<FinalizeAccountAgreements f />}
+                                            element={<FinalizeAccountAgreements />}
+                                        ></Route>
+                                        <Route
+                                            path='/welcome/profile/FinalizeAccount/FinalizeVerifyIdentity'
+                                            element={<FinalizeVerifyIdentity />}
                                         ></Route>
                                     </Routes>
                                 </OpeningAccountNavbarTogglerContextProvider>

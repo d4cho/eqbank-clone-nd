@@ -4,13 +4,10 @@ import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/Op
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
 import { StepperContext } from '../../Context/StepperContext';
 import TextField from '../Atoms/TextField/TextField';
-// import Label from '../Atoms/Label/Label';
 import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
-// import { useNavigate } from 'react-router-dom';
-// import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-// import DoneIcon from '@mui/icons-material/Done';
-// import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
-// import Spinner from '../Atoms/Spinner/Spinner';
+import { useNavigate } from 'react-router-dom';
+import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
+import Spinner from '../Atoms/Spinner/Spinner';
 import Label from '../Atoms/Label/Label';
 import IosShareIcon from '@mui/icons-material/IosShare';
 
@@ -32,42 +29,40 @@ function FinalizeAccountAgreements() {
         if (newWindow) newWindow.opener = null;
     };
     const isCheckedFirstBox = (event) => {
-        console.log(event.target.checked);
         setFirstChecked(event.target.checked);
     };
 
     const isCheckedSecondBox = (event) => {
-        console.log(event.target.checked);
         setSecondChecked(event.target.checked);
     };
-    // const navigate = useNavigate();
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     if (password.length > 0 && passwordAgain.length > 0 && password === passwordAgain) {
-    //         setTimeout(() => {
-    //             navigate('/welcome/profile/PersonalInformation');
-    //             nextStep();
-    //         }, 1500);
-    //         setIsSubmitted(true);
-    //     }
-    // };
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setTimeout(() => {
+            navigate('/welcome/profile/FinalizeAccount/FinalizeVerifyIdentity');
+            nextStep();
+        }, 1500);
+        setIsSubmitted(true);
+    };
 
     return (
         <div>
             <OpeningAccountNavbarContent />
             <OpeningAccountFormContent
-                // dropShawdow={isSubmitted ? <BackDropForForms /> : null}
-                // spinnerShow={
-                //     isSubmitted ? (
-                //         <Spinner
-                //             position='relative'
-                //             bottom='200px'
-                //             left='170px'
-                //             height='65px'
-                //             width='65px'
-                //         />
-                //     ) : null
-                // }
+                dropShawdow={isSubmitted ? <BackDropForForms /> : null}
+                spinnerShow={
+                    isSubmitted ? (
+                        <Spinner
+                            position='relative'
+                            bottom='200px'
+                            left='170px'
+                            height='65px'
+                            width='65px'
+                        />
+                    ) : null
+                }
                 mainHeader={<h2>Now for the fine print</h2>}
                 stepper={<Stepper activeStep={activeStep} />}
                 subText={<p style={{ fontSize: '.875rem' }}>Please review the following.</p>}
@@ -108,7 +103,7 @@ function FinalizeAccountAgreements() {
                                 CDIC Protecting Your Deposits <IosShareIcon fontSize='small' />
                             </li>
                         </ul>
-                        <form action=''>
+                        <form action='' onSubmit={handleSubmit}>
                             <div
                                 style={{
                                     flexDirection: 'row',

@@ -23,7 +23,6 @@ function WelcomePage() {
     const [valid, setValid] = useState(false);
     const navigate = useNavigate();
     const { activeStep } = useContext(StepperContext);
-    const [touched, setTouched] = React.useState(false);
 
     const {
         values,
@@ -53,7 +52,7 @@ function WelcomePage() {
                 navigate('/welcome/profile/emailVerification');
             }, 1500);
             setValid(true);
-        } 
+        }
 
         setSubmitted(true);
     };
@@ -107,11 +106,9 @@ function WelcomePage() {
                                 value={values.firstName}
                                 handleInputChange={handleFirstNameInputChange}
                                 width={matches ? '18.78rem' : null}
-                                onBlur={() => setTouched(true)}
-                                touched={touched}
                                 submitted={submitted}
                             />
-                            {( touched && !values.firstName) || submitted? (
+                            {!values.firstName && submitted ? (
                                 <p
                                     style={{
                                         color: '#cb061d',
@@ -131,11 +128,9 @@ function WelcomePage() {
                                 value={values.lastName}
                                 handleInputChange={handleLastNameInputChange}
                                 width={matches ? '18.78rem' : null}
-                                onBlur={() => setTouched(true)}
-                                touched={touched}
                                 submitted={submitted}
                             />
-                            {(touched && !values.lastName) || submitted ? (
+                            {!values.lastName && submitted ? (
                                 <p
                                     style={{
                                         color: '#cb061d',
@@ -155,15 +150,13 @@ function WelcomePage() {
                                 value={values.email}
                                 handleInputChange={handleEmailInputChange}
                                 width={matches ? '18.78rem' : null}
-                                onBlur={() => setTouched(true)}
-                                touched={touched}
                                 submitted={submitted}
                             />
                         </div>
                         <p style={{ fontSize: '0.70rem', color: '#6d6761' }}>
                             A verification passcode will be sent to this address.
                         </p>
-                        {(touched && !values.email) || submitted ? (
+                        {!values.email && submitted ? (
                             <p
                                 style={{
                                     color: '#cb061d',
@@ -175,7 +168,7 @@ function WelcomePage() {
                                 This field is required
                             </p>
                         ) : null}
-                        {touched && !regex.test(values.email)?
+                        {!regex.test(values.email) && submitted ? (
                             <div
                                 style={{
                                     display: 'flex',
@@ -186,9 +179,9 @@ function WelcomePage() {
                                 }}
                             >
                                 <ErrorOutlineIcon />
-                               invalid email address
+                                invalid email address
                             </div>
-                        : null}
+                        ) : null}
                         <p>
                             By providing the above information, you agree to the terms of our{' '}
                             <b style={{ color: '#c33991' }}>Privacy Agreement</b>{' '}
