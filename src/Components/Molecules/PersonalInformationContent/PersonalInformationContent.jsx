@@ -33,7 +33,7 @@ function PersonalInformationContent({ streetAddress, width, isSubmitted, setIsSu
             }, 1500);
         }
 
-        setIsSubmitted(true)
+        setIsSubmitted(true);
         event.preventDefault();
     };
     return (

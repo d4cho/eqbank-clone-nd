@@ -48,6 +48,7 @@
 .contact-us-img:hover{
     background-color: lightgray;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .header-sign-in{

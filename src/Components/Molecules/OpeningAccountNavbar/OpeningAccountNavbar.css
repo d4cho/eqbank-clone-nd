@@ -42,6 +42,12 @@
   }
 
   
+  .opening-Account-navbar-wrapper{
+    display: flex;
+    list-style: none;
+    gap:15px;
+    margin-top: 20px;
+  }
  
 
   
