@@ -22,7 +22,20 @@ function SideNavigationBar() {
                         {navInfo.map((navItem, idx) => (
                             <div key={idx}>
                                 <div style={{ padding: '25px 20px 25px 20px' }}>
-                                    <li onClick={() => handleToggle(idx)} className='list-item'>
+                                    <li
+                                        onClick={() => handleToggle(idx)}
+                                        className='list-item'
+                                        style={{
+                                            pointerEvents:
+                                                navItem.mainLabel.mainLabelName === 'Sign in' ||
+                                                navItem.mainLabel.mainLabelName ===
+                                                    'Education Centre' ||
+                                                navItem.mainLabel.mainLabelName === 'Contact us' ||
+                                                navItem.mainLabel.mainLabelName === 'Français'
+                                                    ? 'none'
+                                                    : '',
+                                        }}
+                                    >
                                         <a href='/'>{navItem.mainLabel.mainLabelName}</a>
 
                                         {navItem.mainLabel.mainLabelName !== 'Sign in' &&
@@ -45,7 +58,14 @@ function SideNavigationBar() {
 
                                         {clicked === idx && (
                                             <div style={{ backgroundColor: '#fafafa' }}>
-                                                <ul className='secondary-nav-list'>
+                                                <ul
+                                                    className={
+                                                        navItem.mainLabel.mainLabelName ===
+                                                        'Personal banking'
+                                                            ? 'secondary-nav-list'
+                                                            : 'secondary-nav-list-no-scroll'
+                                                    }
+                                                >
                                                     {navItem.mainLabel.subTitle?.map((name, id) => (
                                                         <li key={id}>
                                                             {name.name}
