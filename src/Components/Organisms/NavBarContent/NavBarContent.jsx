@@ -15,61 +15,75 @@ function NavBarContent() {
   const { show, closeShow } = useContext(SearchBarContext);
   const { toggle, sideBarToggle } = useContext(SideBarToggleContext);
   return (
-    <>
-      <div className="parent-container">
-        <div className="inner-container">
-          <div className="join-now-container">
-            <Link
-              paddingTop="10px"
-              paddingBottom="10px"
-              Label="Join now"
-              paddingLeft="10px"
-              paddingRight="10px"
-            />
-            <span
-              onClick={sideBarToggle}
-              className={toggle ? "x-button" : "menu-button"}
-            >
-              <span
-                className="menu-icon"
-                data-parent-container-toggle-icon=""
-              ></span>
-            </span>
-          </div>
+      <>
+          <div className='parent-container'>
+              <div className='inner-container'>
+                  <div className='join-now-container'>
+                      <Link
+                          paddingTop='10px'
+                          paddingBottom='10px'
+                          Label='Join now'
+                          paddingLeft='10px'
+                          paddingRight='10px'
+                      />
+                      <span onClick={sideBarToggle} className={toggle ? 'x-button' : 'menu-button'}>
+                          <span className='menu-icon' data-parent-container-toggle-icon=''></span>
+                      </span>
+                  </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              gap: "80px",
-            }}
-          >
-            <RightNavigationBar />
-            <LeftNavigationBar />
-          </div>
+                  <div
+                      style={{
+                          display: 'flex',
+                          flexDirection: 'row-reverse',
+                          gap: '80px',
+                      }}
+                  >
+                      <RightNavigationBar
+                          image={
+                              <img
+                                  className='contact-us-img'
+                                  src='https://www.eqbank.ca/images/default-source/svgs/eqbank_phone-grey.svg?sfvrsn=2ed0b9d3_6'
+                                  alt=''
+                              />
+                          }
+                          lang=' FR'
+                          signIn=' Sign in'
+                          button={
+                              <Link
+                                  paddingTop='10px'
+                                  paddingBottom='10px'
+                                  Label='Join now'
+                                  paddingLeft='10px'
+                                  paddingRight='10px'
+                                  href='/'
+                              />
+                          }
+                      />
+                      <LeftNavigationBar />
+                  </div>
 
-          <EQBankLogo height="49px" width="114px"/>
-        </div>
-        {/* need one dive hide and then show */}
-
-        {show && (
-          <div className={"search-bar-wrapper"}>
-            <form action="">
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <SearchBar />
-                <span className="search-close-button">
-                  <img
-                    onClick={closeShow}
-                    src="https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg"
-                    alt=""
-                  />
-                </span>
-                <button className="Go-button">Go</button>
+                  <EQBankLogo height='49px' width='114px' />
               </div>
-            </form>{" "}
-          </div>
-        )}
-        {/* {show ? (
+              {/* need one dive hide and then show */}
+
+              {show && (
+                  <div className={'search-bar-wrapper'}>
+                      <form action=''>
+                          <div style={{ display: 'flex', flexDirection: 'row' }}>
+                              <SearchBar />
+                              <span className='search-close-button'>
+                                  <img
+                                      onClick={closeShow}
+                                      src='https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg'
+                                      alt=''
+                                  />
+                              </span>
+                              <button className='Go-button'>Go</button>
+                          </div>
+                      </form>{' '}
+                  </div>
+              )}
+              {/* {show ? (
           <div className={"search-bar-wrapper"}>
             <form action="">
               <div style={{ display: "flex", flexDirection: "row" }}>
@@ -102,12 +116,12 @@ function NavBarContent() {
             </form>{" "}
           </div>
         )} */}
-      </div>
+          </div>
 
-      <NavBarDropdownContent />
-      <MiniCardsContent />
-      <SideBarDrawer/>
-    </>
+          <NavBarDropdownContent />
+          <MiniCardsContent />
+          <SideBarDrawer />
+      </>
   );
 }
 

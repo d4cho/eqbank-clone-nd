@@ -3,52 +3,56 @@ import './NavBarDropDownContent.css';
 import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
 import { SubMenuContext } from '../../../Context/SubMenuContext';
 import MiniCard from '../../Atoms/MiniCard/MiniCard';
+import { findOutMoreCardData } from '../../../Data/MiniCardData';
+import { dropdownNavbarLabels } from '../../../Data/NavbarLabel';
 
 function NavBarDropdownContent() {
-    const { subMenuTitle, everydayBankingClick, investementsClick, paymentsClick, borrowingClick } =
-        useContext(SubMenuContext);
+    const { subMenuTitle, setSubMenuTitle } = useContext(SubMenuContext);
+     const { menuTitle, open } = useContext(leftNavigationContext);
 
-    const { isPersonalBankingArrow, isAboutUsArrow } = useContext(leftNavigationContext);
+    const subMenuTitleSwitch = (subMenuTitle) => {
+        switch (subMenuTitle) {
+            case 'Everyday Banking':
+                setSubMenuTitle('Everyday Banking');
+                break;
+            case 'Investments':
+                setSubMenuTitle('Investments');
+                break;
+            case 'Payments':
+                setSubMenuTitle('Payments');
+                break;
+            case 'Borrowing':
+                setSubMenuTitle('Borrowing');
+                break;
+            default:
+                setSubMenuTitle('Everyday Banking');
+        }
+    };
     return (
         <>
-            {isPersonalBankingArrow ? (
+            {open && menuTitle === 'Personal Banking' ? (
                 <>
                     <div className='link-drop-down'>
                         <h2 className='explore-products-title'>Explore products for...</h2>
                         <ul className='main-content'>
-                            <li onClick={everydayBankingClick}>
-                                Everyday Banking{' '}
-                                <div
-                                    className={
-                                        subMenuTitle === 'Everyday Banking' ? 'check-div' : ''
-                                    }
-                                />
-                            </li>
-
-                            <li onClick={investementsClick}>
-                                Investments{' '}
-                                <div
-                                    className={subMenuTitle === 'Investments' ? 'check-div' : ''}
-                                />
-                            </li>
-
-                            <li onClick={paymentsClick}>
-                                Payments{' '}
-                                <div className={subMenuTitle === 'Payments' ? 'check-div' : ''} />
-                            </li>
-
-                            <li onClick={borrowingClick}>
-                                Borrowing{' '}
-                                <div className={subMenuTitle === 'Borrowing' ? 'check-div' : ''} />
-                            </li>
+                            {dropdownNavbarLabels.map((navItem, idx) => (
+                                <>
+                                    <li onClick={() => subMenuTitleSwitch(navItem)} key={idx}>
+                                        {navItem}
+                                        <div
+                                            className={subMenuTitle === navItem ? 'check-div' : ''}
+                                        />
+                                    </li>
+                                </>
+                            ))}
                         </ul>
                     </div>
                 </>
-            ) : isAboutUsArrow ? (
+            ) : open && menuTitle === 'About us' ? (
                 <div
                     className='find-out-parent-container'
                     style={
-                        isAboutUsArrow
+                       open
                             ? {
                                   boxShadow: '0 3px 5px rgba(0, 0, 0, 0.2) inset',
                                   paddingTop: '10px',
@@ -58,26 +62,14 @@ function NavBarDropdownContent() {
                 >
                     <h1 className='find-out-more'>Find out more about...</h1>
                     <div className='find-out-cards-container'>
-                        <MiniCard
-                            header='Our Company'
-                            content="Who we are and how we're changing banking."
-                            link='Learn more'
-                        />{' '}
-                        <MiniCard
-                            header='Community'
-                            content='How we support the community.'
-                            link='Learn more'
-                        />{' '}
-                        <MiniCard
-                            header='Careers'
-                            content='See if EQ Bank could be the right career fit'
-                            link='Learn more'
-                        />{' '}
-                        <MiniCard
-                            header='News'
-                            content='All the latest industry news about EQ Bank'
-                            link='Learn more'
-                        />
+                        {findOutMoreCardData.map((miniCard, idx) => (
+                            <MiniCard
+                                key={idx}
+                                header={miniCard.header}
+                                content={miniCard.content}
+                                link={miniCard.link}
+                            />
+                        ))}
                     </div>
                 </div>
             ) : null}

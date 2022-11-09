@@ -1,70 +1,79 @@
-import React, { useContext} from "react";
-import "./LeftNavigationBar.css";
-import { leftNavigationContext } from "../../../Context/LeftNavigationBarContext";
-import { SearchBarContext } from "../../../Context/SearchBarContext";
+import React, { useContext } from 'react';
+import './LeftNavigationBar.css';
+import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
+import { SearchBarContext } from '../../../Context/SearchBarContext';
+import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 function LeftNavigationBar() {
-  const {
-    isPersonalBankingArrow,
-    isAboutUsArrow,
-    isOpenHelpArrow,
-    menuTitle,
-    openArrowPersonalBanking,
-    openArrowAboutUs,
-    openArrowHelpUs,
-  } = useContext(leftNavigationContext);
+    const { menuTitle, setMenuTitle, open, setOpen } = useContext(leftNavigationContext);
 
-  const {handleShow} = useContext(SearchBarContext);
+    const { handleShow } = useContext(SearchBarContext);
 
+    const leftNavBarSwitchLabel = (menuTitle) => {
+        switch (menuTitle) {
+            case 'Personal Banking':
+                setMenuTitle('Personal Banking');
+                setOpen(!open);
+                break;
+            case 'About us':
+                setMenuTitle('About us');
+                setOpen(!open);
+                break;
+            case 'Help':
+                setOpen(!open);
+                setMenuTitle('Help');
+                break;
+            default:
+                setMenuTitle('Personal Banking');
+        }
+    };
 
-  return (
-    <>
-      <div className={"left-navbar-container"}>
-        <nav>
-          <ul className="menu-items">
-            <li onClick={openArrowPersonalBanking}>
-              <div className="icon-and-text-holder">
-                <span style={menuTitle === 'Personal Banking' && isPersonalBankingArrow? {color: '#c33991'}: null} className="align-name-title">Personal Banking</span>
-                <div
-                  className={isPersonalBankingArrow ? "arrow-up" : "arrow-down"}
-                />
-              </div>
-              <div
-                className={menuTitle === "Personal Banking" && isPersonalBankingArrow ? "active" : ""}
-              />
-            </li>
-            <li onClick={openArrowAboutUs}>
-              <div className="icon-and-text-holder">
-                <span style={menuTitle === 'About us' && isAboutUsArrow? {color: '#c33991'}: null} className="align-name-title">About us</span>
-                <div className={isAboutUsArrow ? "arrow-up" : "arrow-down"} />
-              </div>
-              <div className={menuTitle  === "About us" && isAboutUsArrow ? "active" : ""} />
-            </li>
-            <li>
-              <span className="align-name-title-no-arrow">
-                Education Centre
-              </span>
-            </li>
-            <li onClick={openArrowHelpUs}>
-              <div className="icon-and-text-holder">
-                <span style={menuTitle === 'Help' && isOpenHelpArrow? {color: '#c33991'}: null} className="align-name-title">Help</span>
-                <div className={isOpenHelpArrow ? "arrow-up" : "arrow-down"} />
-              </div>
-              <div className={menuTitle === "Help" && isOpenHelpArrow ? "active" : ""} />
-            </li>
-            <li>
-              {" "}
-              <div onClick={handleShow}  className="search-button">
-                <a href="#" className="search-link">
-                  <span className="search-icon"></span>
-                </a>
-              </div>
+    return (
+        <>
+            <div className='left-navbar-container'>
+                <nav>
+                    <ul className='menu-items'>
+                        {leftNavbarLabels.map((leftNavItem, idx) => (
+                            <div key={idx}>
+                                <li onClick={() => leftNavBarSwitchLabel(leftNavItem)}>
+                                    <span
+                                        style={
+                                            menuTitle === leftNavItem && open
+                                                ? { color: '#c33991' }
+                                                : null
+                                        }
+                                        className='align-name-title'
+                                    >
+                                        {leftNavItem}
+                                        {leftNavItem !== 'Education Centre' && (
+                                            <span
+                                                className={
+                                                    open && menuTitle === leftNavItem
+                                                        ? 'arrow-up'
+                                                        : 'arrow-down'
+                                                }
+                                            />
+                                        )}
+                                    </span>
 
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </>
-  );
+                                    <div
+                                        className={
+                                            menuTitle === leftNavItem && open ? 'active' : null
+                                        }
+                                    />
+                                </li>
+                            </div>
+                        ))}
+                        <li onClick={handleShow} className='search-button'>
+                            {' '}
+                            <span className='search-link'>
+                                <span className='search-icon'></span>
+                            </span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </>
+    );
 }
 
 export default LeftNavigationBar;

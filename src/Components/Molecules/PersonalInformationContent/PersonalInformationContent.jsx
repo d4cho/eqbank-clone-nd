@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState} from 'react';
 import './PersonalInformationContent.css';
 import TextField from '../../Atoms/TextField/TextField';
 import FormSubmissionButton from '../../Atoms/FromSubmissionButton/FormSubmissionButton';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { useNavigate } from 'react-router-dom';
+import Label from '../../Atoms/Label/Label';
 
 function PersonalInformationContent({ streetAddress, width, isSubmitted, setIsSubmitted }) {
     const [personalValues, setPersonalValues] = useState({
@@ -33,7 +34,7 @@ function PersonalInformationContent({ streetAddress, width, isSubmitted, setIsSu
             }, 1500);
         }
 
-        setIsSubmitted(true)
+        setIsSubmitted(true);
         event.preventDefault();
     };
     return (
@@ -46,9 +47,11 @@ function PersonalInformationContent({ streetAddress, width, isSubmitted, setIsSu
                     </p>
                 </div>
                 <div className='text-field-container' style={{ marginTop: '20px' }}>
-                    <label style={{ fontSize: '0.8rem', fontWeight: '600' }}>
-                        Date of birth (Day/Month/Year){' '}
-                    </label>
+                    <Label
+                        Label='Date of birth (Day/Month/Year)'
+                        fontSize='0.8rem'
+                        fontWeight='600'
+                    />
                     <TextField
                         width={width}
                         handleInputChange={dateOfBirthInputChange}
@@ -77,9 +80,7 @@ function PersonalInformationContent({ streetAddress, width, isSubmitted, setIsSu
                     ) : null}
                 </div>
                 <div className='text-field-container'>
-                    <label style={{ fontSize: '0.8rem', fontWeight: '600' }}>
-                        Social Insurance Number
-                    </label>
+                    <Label Label='  Social Insurance Number' fontSize='0.8rem' fontWeight='600' />
                     <TextField
                         width={width}
                         handleInputChange={sinInputChange}

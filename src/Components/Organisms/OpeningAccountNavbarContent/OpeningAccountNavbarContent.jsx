@@ -8,6 +8,8 @@ import { OpeningAccountNavbarTogglerContext } from "../../../Context/OpeningAcco
 
 import OpeningAccountNavbarDropdown from "../OpeningAccountNavbarDropdown/OpeningAccountNavbarDropdown";
 import Spinner from "../../Atoms/Spinner/Spinner";
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { FaRegCommentDots } from 'react-icons/fa';
 
 function OpeningAccountNavbarContent() {
   const [spinner, setSpinner] = useState(true);
@@ -35,7 +37,19 @@ function OpeningAccountNavbarContent() {
           <nav className='opening-account-navbar-parent'>
               <div className='opening-account-container'>
                   <EQBankLogo height='39px' width='90px' />
-                  <OpeningAccountNavbar />
+                  <OpeningAccountNavbar
+                      needHelp='Need help?'
+                      contactUs='Contact us'
+                      signIn=' Sign in'
+                      helpIcon={
+                          <HelpOutlineIcon
+                              style={{ position: 'relative', bottom: '3px', color: '#c73391' }}
+                          />
+                      }
+                      commentsIcon={
+                          <FaRegCommentDots style={{ color: '#c73391', fontSize: '20px' }} />
+                      }
+                  />
               </div>
 
               <div className='opening-account-container-mobile'>
