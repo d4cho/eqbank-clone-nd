@@ -88,6 +88,19 @@
     list-style: none;
     font-size: 0.9rem;
     font-weight: 800;
+      max-height: 590px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.secondary-nav-list-no-scroll {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 800;
+      max-height: 590px;
 }
 
 .inner-sub-list {
@@ -132,3 +145,4 @@
         display: none;
     }
 }
+
