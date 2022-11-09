@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './NavBarDropDownContent.css';
 import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
 import { SubMenuContext } from '../../../Context/SubMenuContext';
@@ -8,8 +8,7 @@ import { dropdownNavbarLabels } from '../../../Data/NavbarLabel';
 
 function NavBarDropdownContent() {
     const { subMenuTitle, setSubMenuTitle } = useContext(SubMenuContext);
-
-    const { isPersonalBankingArrow, isAboutUsArrow } = useContext(leftNavigationContext);
+     const { menuTitle, open } = useContext(leftNavigationContext);
 
     const subMenuTitleSwitch = (subMenuTitle) => {
         switch (subMenuTitle) {
@@ -31,7 +30,7 @@ function NavBarDropdownContent() {
     };
     return (
         <>
-            {isPersonalBankingArrow ? (
+            {open && menuTitle === 'Personal Banking' ? (
                 <>
                     <div className='link-drop-down'>
                         <h2 className='explore-products-title'>Explore products for...</h2>
@@ -49,11 +48,11 @@ function NavBarDropdownContent() {
                         </ul>
                     </div>
                 </>
-            ) : isAboutUsArrow ? (
+            ) : open && menuTitle === 'About us' ? (
                 <div
                     className='find-out-parent-container'
                     style={
-                        isAboutUsArrow
+                       open
                             ? {
                                   boxShadow: '0 3px 5px rgba(0, 0, 0, 0.2) inset',
                                   paddingTop: '10px',

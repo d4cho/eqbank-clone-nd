@@ -2,89 +2,67 @@ import React, { useContext } from 'react';
 import './LeftNavigationBar.css';
 import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
 import { SearchBarContext } from '../../../Context/SearchBarContext';
+import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 function LeftNavigationBar() {
-    const {
-        isPersonalBankingArrow,
-        isAboutUsArrow,
-        isOpenHelpArrow,
-        menuTitle,
-        openArrowPersonalBanking,
-        openArrowAboutUs,
-        openArrowHelpUs,
-    } = useContext(leftNavigationContext);
+    const { menuTitle, setMenuTitle, open, setOpen } = useContext(leftNavigationContext);
 
     const { handleShow } = useContext(SearchBarContext);
+
+    const leftNavBarSwitchLabel = (menuTitle) => {
+        switch (menuTitle) {
+            case 'Personal Banking':
+                setMenuTitle('Personal Banking');
+                setOpen(!open);
+                break;
+            case 'About us':
+                setMenuTitle('About us');
+                setOpen(!open);
+                break;
+            case 'Help':
+                setOpen(!open);
+                setMenuTitle('Help');
+                break;
+            default:
+                setMenuTitle('Personal Banking');
+        }
+    };
 
     return (
         <>
             <div className='left-navbar-container'>
                 <nav>
                     <ul className='menu-items'>
-                        <li onClick={openArrowPersonalBanking}>
-                            <span
-                                style={
-                                    menuTitle === 'Personal Banking' && isPersonalBankingArrow
-                                        ? { color: '#c33991' }
-                                        : null
-                                }
-                                className='align-name-title'
-                            >
-                                Personal Banking{' '}
-                                <span
-                                    className={isPersonalBankingArrow ? 'arrow-up' : 'arrow-down'}
-                                />
-                            </span>
+                        {leftNavbarLabels.map((leftNavItem, idx) => (
+                            <div key={idx}>
+                                <li onClick={() => leftNavBarSwitchLabel(leftNavItem)}>
+                                    <span
+                                        style={
+                                            menuTitle === leftNavItem && open
+                                                ? { color: '#c33991' }
+                                                : null
+                                        }
+                                        className='align-name-title'
+                                    >
+                                        {leftNavItem}
+                                        {leftNavItem !== 'Education Centre' && (
+                                            <span
+                                                className={
+                                                    open && menuTitle === leftNavItem
+                                                        ? 'arrow-up'
+                                                        : 'arrow-down'
+                                                }
+                                            />
+                                        )}
+                                    </span>
 
-                            <div
-                                className={
-                                    menuTitle === 'Personal Banking' && isPersonalBankingArrow
-                                        ? 'active'
-                                        : ''
-                                }
-                            />
-                        </li>
-
-                        <li onClick={openArrowAboutUs}>
-                            <span
-                                style={
-                                    menuTitle === 'About us' && isAboutUsArrow
-                                        ? { color: '#c33991' }
-                                        : null
-                                }
-                                className='align-name-title'
-                            >
-                                About us
-                                <span className={isAboutUsArrow ? 'arrow-up' : 'arrow-down'} />
-                            </span>
-
-                            <div
-                                className={
-                                    menuTitle === 'About us' && isAboutUsArrow ? 'active' : ''
-                                }
-                            />
-                        </li>
-
-                        <li>
-                            <span className='align-name-title-no-arrow'>Education Centre</span>
-                        </li>
-
-                        <li onClick={openArrowHelpUs}>
-                            <span
-                                style={
-                                    menuTitle === 'Help' && isOpenHelpArrow
-                                        ? { color: '#c33991' }
-                                        : null
-                                }
-                                className='align-name-title'
-                            >
-                                Help
-                                <span className={isOpenHelpArrow ? 'arrow-up' : 'arrow-down'} />
-                            </span>
-                            <div
-                                className={menuTitle === 'Help' && isOpenHelpArrow ? 'active' : ''}
-                            />
-                        </li>
-
+                                    <div
+                                        className={
+                                            menuTitle === leftNavItem && open ? 'active' : null
+                                        }
+                                    />
+                                </li>
+                            </div>
+                        ))}
                         <li onClick={handleShow} className='search-button'>
                             {' '}
                             <span className='search-link'>

@@ -19,9 +19,9 @@ function ProductCard({ image, title, subTitle, listItems, width, Label }) {
             <ul className='product-card-list' >
                 {listItems.map((item, idx) => {
                     return (
-                        <>
+                        <div key={idx}>
                             <li
-                                key={idx}
+                                
                                 style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}
                             >
                                 <img
@@ -31,7 +31,7 @@ function ProductCard({ image, title, subTitle, listItems, width, Label }) {
                                 />
                                 {item}{' '}
                             </li>
-                        </>
+                        </div>
                     );
                 })}
             </ul>
