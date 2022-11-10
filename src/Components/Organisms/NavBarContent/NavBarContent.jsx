@@ -67,8 +67,7 @@ function NavBarContent() {
               {/* need one dive hide and then show */}
 
               {show && (
-                  <div className={'search-bar-wrapper'}>
-                      <form action=''>
+                  <div className='search-bar-wrapper'>
                           <div style={{ display: 'flex', flexDirection: 'row' }}>
                               <SearchBar />
                               <span className='search-close-button'>
@@ -80,7 +79,6 @@ function NavBarContent() {
                               </span>
                               <button className='Go-button'>Go</button>
                           </div>
-                      </form>{' '}
                   </div>
               )}
               {/* {show ? (
