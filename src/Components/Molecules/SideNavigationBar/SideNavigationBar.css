@@ -63,7 +63,7 @@
 
 .blocker-content {
     display: block;
-    padding: 1rem;
+    padding: 3rem;
     background-color: #fafafa;
 }
 
@@ -88,19 +88,19 @@
     list-style: none;
     font-size: 0.9rem;
     font-weight: 800;
-      max-height: 590px;
+    max-height: 590px;
     overflow: scroll;
     overflow-x: hidden;
 }
 
 .secondary-nav-list-no-scroll {
-    padding-left: 20px;
+    padding-left: 2px;
     padding-top: 30px;
     padding-bottom: 30px;
     list-style: none;
     font-size: 0.9rem;
     font-weight: 800;
-      max-height: 590px;
+    max-height: 590px;
 }
 
 .inner-sub-list {
@@ -109,7 +109,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: stretch;
-    gap: 50px;
+    gap: 30px;
     color: #c33991;
     font-size: 1rem;
     padding-top: 20px;
@@ -117,7 +117,6 @@
     font-size: 0.9rem;
     font-weight: 800;
 }
-
 
 @media screen and (min-width: 1020px) {
     .nav-list {
@@ -145,4 +144,3 @@
         display: none;
     }
 }
-

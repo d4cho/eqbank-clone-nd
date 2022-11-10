@@ -21,7 +21,17 @@ function SideNavigationBar() {
                     <ul className='nav-list'>
                         {navInfo.map((navItem, idx) => (
                             <div key={idx}>
-                                <div style={{ padding: '25px 20px 25px 20px' }}>
+                                <div
+                                    style={{
+                                        padding: '25px 20px 25px 20px',
+                                        backgroundColor:
+                                            navItem.mainLabel.mainLabelName === 'Contact us' ||
+                                            navItem.mainLabel.mainLabelName === 'Français'
+                                                ? '#fafafa'
+                                                : null,
+                                        borderBottom: '1px solid #ccc',
+                                    }}
+                                >
                                     <li
                                         onClick={() => handleToggle(idx)}
                                         className='list-item'
@@ -55,37 +65,35 @@ function SideNavigationBar() {
                                                     />
                                                 </span>
                                             )}
-
-                                        {clicked === idx && (
-                                            <div style={{ backgroundColor: '#fafafa' }}>
-                                                <ul
-                                                    className={
-                                                        navItem.mainLabel.mainLabelName ===
-                                                        'Personal banking'
-                                                            ? 'secondary-nav-list'
-                                                            : 'secondary-nav-list-no-scroll'
-                                                    }
-                                                >
-                                                    {navItem.mainLabel.subTitle?.map((name, id) => (
-                                                        <li key={id}>
-                                                            {name.name}
-                                                            {
-                                                                <ul className='inner-sub-list'>
-                                                                    {name.links.map((link, id) => (
-                                                                        <>
-                                                                            <li key={id}>{link}</li>
-                                                                        </>
-                                                                    ))}
-                                                                </ul>
-                                                            }
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
                                     </li>
                                 </div>
-                                <hr />
+                                {clicked === idx ? (
+                                    <div style={{ backgroundColor: '#fafafa' }}>
+                                        <ul
+                                            className={
+                                                navItem.mainLabel.mainLabelName ===
+                                                'Personal banking'
+                                                    ? 'secondary-nav-list'
+                                                    : 'secondary-nav-list-no-scroll'
+                                            }
+                                        >
+                                            {navItem.mainLabel.subTitle?.map((name, id) => (
+                                                <li key={id}>
+                                                    {name.name}
+                                                    {
+                                                        <ul className='inner-sub-list'>
+                                                            {name.links.map((link, id) => (
+                                                                <div key={id}>
+                                                                    <li>{link}</li>
+                                                                </div>
+                                                            ))}
+                                                        </ul>
+                                                    }
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) : null}
                             </div>
                         ))}
                     </ul>
