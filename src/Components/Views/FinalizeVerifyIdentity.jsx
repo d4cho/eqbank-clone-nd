@@ -1,19 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
-import { StepperContext } from '../../Context/StepperContext';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 function FinalizeVerifyIdentity() {
-    const { activeStep, nextStep } = useContext(StepperContext);
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
-
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
         if (newWindow) newWindow.opener = null;

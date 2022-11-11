@@ -3,17 +3,15 @@ import "./NavBarContent.css";
 import Link from "../../Atoms/Link/Link";
 import LeftNavigationBar from "../../Molecules/LeftNavigationBar/LeftNavigationBar";
 import RightNavigationBar from "../../Molecules/RightNavigationBar/RightNavigationBar";
-import { SearchBarContext } from "../../../Context/SearchBarContext";
+import { MainContext } from "../../../Context/MainContext";
 import SearchBar from "../../Atoms/SlideInSearchBar/SlideInSearchBar";
-import { SideBarToggleContext } from "../../../Context/SideBarToggler";
 import NavBarDropdownContent from "../../Molecules/NavBarDropDownContent/NavBarDropDownContent";
 import MiniCardsContent from "../../Molecules/MiniCardsContent/MiniCardsContent";
 import SideBarDrawer from "../SideBarDrawer/SideBarDrawer";
 import EQBankLogo from "../../Atoms/EQBankLogo/EQBankLogo";
 
 function NavBarContent() {
-  const { show, closeShow } = useContext(SearchBarContext);
-  const { toggle, sideBarToggle } = useContext(SideBarToggleContext);
+  const { show, closeShow, toggle, sideBarToggle } = useContext(MainContext);
   return (
       <>
           <div className='parent-container'>

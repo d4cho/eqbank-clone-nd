@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
 import './NavBarDropDownContent.css';
-import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
-import { SubMenuContext } from '../../../Context/SubMenuContext';
+import { MainContext } from '../../../Context/MainContext';
 import MiniCard from '../../Atoms/MiniCard/MiniCard';
 import { findOutMoreCardData } from '../../../Data/MiniCardData';
 import { dropdownNavbarLabels } from '../../../Data/NavbarLabel';
 
 function NavBarDropdownContent() {
-    const { subMenuTitle, setSubMenuTitle } = useContext(SubMenuContext);
-     const { menuTitle, open } = useContext(leftNavigationContext);
+    const { menuTitle, open, subMenuTitle, setSubMenuTitle } = useContext(MainContext);
 
     const subMenuTitleSwitch = (subMenuTitle) => {
         switch (subMenuTitle) {
@@ -52,7 +50,7 @@ function NavBarDropdownContent() {
                 <div
                     className='find-out-parent-container'
                     style={
-                       open
+                        open
                             ? {
                                   boxShadow: '0 3px 5px rgba(0, 0, 0, 0.2) inset',
                                   paddingTop: '10px',

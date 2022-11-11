@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
-import { StepperContext } from '../../Context/StepperContext';
 import TextField from '../Atoms/TextField/TextField';
 import Label from '../Atoms/Label/Label';
 import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
@@ -14,9 +13,10 @@ import DoneIcon from '@mui/icons-material/Done';
 import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 import Spinner from '../Atoms/Spinner/Spinner';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { MainContext } from '../../Context/MainContext';
 
 function FinalizeAccountPasswordInput() {
-    const { activeStep, nextStep } = useContext(StepperContext);
+    const { activeStep, nextStep } = useContext(MainContext);
     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
     const [password, setPassword] = useState('');
     const [passwordAgain, setPasswordAgain] = useState('');

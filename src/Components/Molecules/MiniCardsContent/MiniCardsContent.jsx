@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
 import MiniCard from '../../Atoms/MiniCard/MiniCard';
 import './MiniCardsContent.css';
-import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
-import { SubMenuContext } from '../../../Context/SubMenuContext';
+import { MainContext } from '../../../Context/MainContext';
 import { everydayBankingCardData } from '../../../Data/MiniCardData';
 import { investmentsCardData } from '../../../Data/MiniCardData';
 import { paymentsCardData } from '../../../Data/MiniCardData';
 import { borrowingCardData } from '../../../Data/MiniCardData';
 
 function MiniCardsContent() {
-    const { open, menuTitle } = useContext(leftNavigationContext);
-    const { subMenuTitle } = useContext(SubMenuContext);
+    const { open, menuTitle, subMenuTitle } = useContext(MainContext);
     return (
         <>
             {open && subMenuTitle === 'Everyday Banking' && menuTitle === 'Personal Banking' ? (

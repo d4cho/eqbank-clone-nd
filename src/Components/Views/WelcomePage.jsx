@@ -16,13 +16,13 @@ import Spinner from '../Atoms/Spinner/Spinner.jsx';
 import Label from '../Atoms/Label/Label.jsx';
 import SignUpFAQ from '../Atoms/SignUpFAQ/SignUpFAQ.jsx';
 
-import { StepperContext } from '@mui/material';
+import { MainContext } from '../../Context/MainContext.js';
 function WelcomePage() {
     const [toggle, setToggle] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [valid, setValid] = useState(false);
     const navigate = useNavigate();
-    const { activeStep } = useContext(StepperContext);
+    const { activeStep } = useContext(MainContext);
 
     const {
         values,

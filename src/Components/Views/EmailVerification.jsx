@@ -5,7 +5,7 @@ import Stepper from "../Molecules/Stepper/Stepper.jsx";
 import { FormContext } from "../../Context/FormContext";
 import PassCodeTextField from "../Atoms/PasscodeTextField/PasscodeTextField";
 import FormSubmissionButton from "../Atoms/FromSubmissionButton/FormSubmissionButton";
-import { StepperContext } from "../../Context/StepperContext";
+import { MainContext } from "../../Context/MainContext";
 import { useNavigate } from "react-router-dom";
 import BackDropForForms from "../Organisms/BackDropForForms/BackDropFormForms";
 import EditIcon from '@mui/icons-material/Edit';
@@ -13,7 +13,7 @@ import Spinner from "../Atoms/Spinner/Spinner";
 
 function EmailVerification() {
   const { values } = useContext(FormContext);
-  const { nextStep, activeStep } = useContext(StepperContext);
+  const { nextStep, activeStep } = useContext(MainContext);
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
   const [passcode, setPasscode] = useState({
