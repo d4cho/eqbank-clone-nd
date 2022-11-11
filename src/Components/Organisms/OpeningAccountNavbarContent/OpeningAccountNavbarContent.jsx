@@ -4,7 +4,7 @@ import EQBankLogo from "../../Atoms/EQBankLogo/EQBankLogo";
 import OpeningAccountNavbar from "../../Molecules/OpeningAccountNavbar/OpeningAccountNavbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { OpeningAccountNavbarTogglerContext } from "../../../Context/OpeningAccountNavbarToggler";
+import { MainContext } from "../../../Context/MainContext";
 
 import OpeningAccountNavbarDropdown from "../OpeningAccountNavbarDropdown/OpeningAccountNavbarDropdown";
 import Spinner from "../../Atoms/Spinner/Spinner";
@@ -24,9 +24,7 @@ function OpeningAccountNavbarContent() {
     setTimeout(() => setSpinner(false), 2000);
   }, []);
 
-  const { openCloseMenu, openCloseMenuToggler } = useContext(
-    OpeningAccountNavbarTogglerContext
-  );
+  const { openCloseMenu, openCloseMenuToggler } = useContext(MainContext);
   return (
       <>
           {show && (

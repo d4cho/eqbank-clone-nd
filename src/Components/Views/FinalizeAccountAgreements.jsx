@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext,useState } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
-import { StepperContext } from '../../Context/StepperContext';
 import TextField from '../Atoms/TextField/TextField';
 import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
 import { useNavigate } from 'react-router-dom';
@@ -10,19 +9,13 @@ import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 import Spinner from '../Atoms/Spinner/Spinner';
 import Label from '../Atoms/Label/Label';
 import IosShareIcon from '@mui/icons-material/IosShare';
+import { MainContext } from '../../Context/MainContext';
 
 function FinalizeAccountAgreements() {
-    const { activeStep, nextStep } = useContext(StepperContext);
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const { activeStep, nextStep} = useContext(MainContext);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [firstChecked, setFirstChecked] = useState(false);
     const [secondChecked, setSecondChecked] = useState(false);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');

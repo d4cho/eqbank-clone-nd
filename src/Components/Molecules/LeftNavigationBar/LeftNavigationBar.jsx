@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import './LeftNavigationBar.css';
-import { leftNavigationContext } from '../../../Context/LeftNavigationBarContext';
-import { SearchBarContext } from '../../../Context/SearchBarContext';
+import { MainContext } from '../../../Context/MainContext';
 import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 function LeftNavigationBar() {
-    const { menuTitle, setMenuTitle, open, setOpen } = useContext(leftNavigationContext);
+    const { menuTitle, setMenuTitle, open, setOpen } = useContext(MainContext);
 
-    const { handleShow } = useContext(SearchBarContext);
+    const { handleShow } = useContext(MainContext);
 
     const leftNavBarSwitchLabel = (menuTitle) => {
         switch (menuTitle) {

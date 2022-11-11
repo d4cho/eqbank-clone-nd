@@ -1,8 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
-import { StepperContext } from '../../Context/StepperContext';
 import FilterButton from '../Atoms/FilterButton/FilterButton';
 import { filterButtonDesktop } from '../../Data/ButtonsData';
 import { filterButtonMobile } from '../../Data/ButtonsData';
@@ -13,20 +12,14 @@ import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 import Spinner from '../Atoms/Spinner/Spinner';
 import SignUpFAQ from '../Atoms/SignUpFAQ/SignUpFAQ';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { MainContext } from '../../Context/MainContext';
 
 function VerificationChoice() {
-    const { activeStep, nextStep } = useContext(StepperContext);
+    const { activeStep, nextStep, matches } = useContext(MainContext);
     const [active, setActive] = useState(1);
     const filteredData = filteredDataContent.filter((item) => item.id === 1);
     const [state, setState] = useState(filteredData);
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
     const [isSubmitted, setIsSubmitted] = useState(false);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
 
     const handleClick = (id) => {
         setActive(id);

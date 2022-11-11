@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useContext } from 'react';
 import './OpeningAccountFormContent.css';
+import { MainContext } from '../../../Context/MainContext';
 
 function OpeningAccountFormContent({
     savingPlusText,
@@ -13,17 +14,10 @@ function OpeningAccountFormContent({
     passcodeTextFields,
     formButton,
 }) {
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
-
+    const {matches } = useContext(MainContext);
     return (
         <>
-            <div style={matches ? { backgroundColor: '#f8f8f8', minHeight: '1010px' } : {}}>
+            <div style={matches ? { backgroundColor: '#f8f8f8', minHeight: '1000px' } : {}}>
                 {dropShawdow}
                 <div className={matches ? 'container' : ''}>
                     <div

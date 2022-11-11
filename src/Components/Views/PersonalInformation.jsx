@@ -1,8 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState} from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
-import { StepperContext } from '../../Context/StepperContext';
 import TextField from '../Atoms/TextField/TextField';
 import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
 import SelectField from '../Atoms/SelectField/SelectField';
@@ -12,9 +11,10 @@ import PersonalInformationContent from '../Molecules/PersonalInformationContent/
 import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 import Spinner from '../Atoms/Spinner/Spinner';
 import Label from '../Atoms/Label/Label';
+import { MainContext } from '../../Context/MainContext';
 
 function PersonalInformation() {
-    const { activeStep } = useContext(StepperContext);
+    const { activeStep, matches } = useContext(MainContext);
     const [submitted, setSubmitted] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [address, setAddress] = useState(false);
@@ -68,13 +68,6 @@ function PersonalInformation() {
         event.preventDefault();
     };
 
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
     return (
         <>
             <OpeningAccountNavbarContent />

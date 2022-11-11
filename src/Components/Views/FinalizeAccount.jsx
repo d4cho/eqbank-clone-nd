@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
-import { StepperContext } from '../../Context/StepperContext';
 import SelectField from '../Atoms/SelectField/SelectField';
 import FormSubmissionButton from '../Atoms/FromSubmissionButton/FormSubmissionButton';
 import RadioButton from '../Atoms/RadioButton/RadioButton';
@@ -11,10 +10,10 @@ import { occupationData } from '../../Data/Occupation';
 import { useNavigate } from 'react-router-dom';
 import BackDropForForms from '../Organisms/BackDropForForms/BackDropFormForms';
 import Spinner from '../Atoms/Spinner/Spinner';
+import { MainContext } from '../../Context/MainContext';
 
 function FinalizeAccount() {
-    const { activeStep, nextStep } = useContext(StepperContext);
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const { activeStep, nextStep, matches } = useContext(MainContext);
     const [occupation, setOccupation] = useState('Personal Savings');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const navigate = useNavigate();
@@ -26,12 +25,6 @@ function FinalizeAccount() {
         setIsSubmitted(true);
          event.preventDefault();
     };
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
 
     return (
         <div>
