@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent.jsx';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent.jsx';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
@@ -22,7 +22,7 @@ function WelcomePage() {
     const [submitted, setSubmitted] = useState(false);
     const [valid, setValid] = useState(false);
     const navigate = useNavigate();
-    const { activeStep } = useContext(MainContext);
+    const { activeStep, matches } = useContext(MainContext);
 
     const {
         values,
@@ -31,13 +31,6 @@ function WelcomePage() {
         handleEmailInputChange,
     } = useContext(FormContext);
 
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
 
     const toggleHandler = () => {
         setToggle(!toggle);

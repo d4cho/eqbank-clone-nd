@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext,useState } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
@@ -12,17 +12,10 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import { MainContext } from '../../Context/MainContext';
 
 function FinalizeAccountAgreements() {
-    const { activeStep, nextStep } = useContext(MainContext);
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const { activeStep, nextStep} = useContext(MainContext);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [firstChecked, setFirstChecked] = useState(false);
     const [secondChecked, setSecondChecked] = useState(false);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');

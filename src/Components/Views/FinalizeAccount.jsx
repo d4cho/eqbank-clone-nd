@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import OpeningAccountNavbarContent from '../Organisms/OpeningAccountNavbarContent/OpeningAccountNavbarContent';
 import OpeningAccountFormContent from '../Organisms/OpeningAccountFormContent/OpeningAccountFormContent';
 import Stepper from '../Molecules/Stepper/Stepper.jsx';
@@ -13,8 +13,7 @@ import Spinner from '../Atoms/Spinner/Spinner';
 import { MainContext } from '../../Context/MainContext';
 
 function FinalizeAccount() {
-    const { activeStep, nextStep } = useContext(MainContext);
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const { activeStep, nextStep, matches } = useContext(MainContext);
     const [occupation, setOccupation] = useState('Personal Savings');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const navigate = useNavigate();
@@ -26,12 +25,6 @@ function FinalizeAccount() {
         setIsSubmitted(true);
          event.preventDefault();
     };
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
 
     return (
         <div>

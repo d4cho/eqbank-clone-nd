@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 
 export const MainContext = createContext();
 
@@ -10,6 +10,13 @@ function MainContextProvider(props) {
     const [toggle, setToggle] = useState(false);
     const [activeStep, setActiveStep] = useState(0);
     const [subMenuTitle, setSubMenuTitle] = useState('Everyday Banking');
+    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+
+    useEffect(() => {
+        window
+            .matchMedia('(min-width: 1020px)')
+            .addEventListener('change', (e) => setMatches(e.matches));
+    }, []);
 
     const nextStep = () => {
         if (activeStep < 2) {
@@ -50,6 +57,7 @@ function MainContextProvider(props) {
                 nextStep,
                 subMenuTitle,
                 setSubMenuTitle,
+                matches,
             }}
         >
             {props.children}
