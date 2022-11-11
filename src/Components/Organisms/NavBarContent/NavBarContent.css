@@ -1,154 +1,128 @@
 .parent-container {
-  background: #fff;
-  width: 100%;
-  padding-top: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 50000;
+    background: #fff;
+    width: 100%;
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 50000;
 }
-
 
 /* @media screen and (max-width: 1020px) {
   .join-now-container {}
 } */
 .join-now-container {
-  float: right;
-  margin-top: 10px;
+    float: right;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 1020px) {
-  .menu-button {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyNCAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMy42NjYzIDE2LjY2NjdIMC4zMzMwMDhWMjEuNjY2N0gyMy42NjYzVjE2LjY2NjdaIiBmaWxsPSIjQzMzOTkxIi8+DQo8cGF0aCBkPSJNMjMuNjY2MyA4LjMzMzM0SDAuMzMzMDA4VjEzLjMzMzNIMjMuNjY2M1Y4LjMzMzM0WiIgZmlsbD0iI0MzMzk5MSIvPg0KPHBhdGggZD0iTTIzLjY2NjMgMEgwLjMzMzAwOFY1SDIzLjY2NjNWMFoiIGZpbGw9IiNDMzM5OTEiLz4NCjwvc3ZnPg0K);
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 19px;
-    width: 21px;
-    background-size: contain;
-    margin-right: 20px;
-    position: relative;
-    top: 5px;
-    cursor: pointer;
-  }
+    .menu-button {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyNCAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMy42NjYzIDE2LjY2NjdIMC4zMzMwMDhWMjEuNjY2N0gyMy42NjYzVjE2LjY2NjdaIiBmaWxsPSIjQzMzOTkxIi8+DQo8cGF0aCBkPSJNMjMuNjY2MyA4LjMzMzM0SDAuMzMzMDA4VjEzLjMzMzNIMjMuNjY2M1Y4LjMzMzM0WiIgZmlsbD0iI0MzMzk5MSIvPg0KPHBhdGggZD0iTTIzLjY2NjMgMEgwLjMzMzAwOFY1SDIzLjY2NjNWMFoiIGZpbGw9IiNDMzM5OTEiLz4NCjwvc3ZnPg0K);
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 19px;
+        width: 21px;
+        background-size: contain;
+        margin-right: 20px;
+        position: relative;
+        top: 5px;
+        cursor: pointer;
+    }
 
-  .x-button {
-    background-image: url("https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg");
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 19px;
-    width: 21px;
-    background-size: contain;
-    margin-right: 20px;
-    position: relative;
-    top: 5px;
-    cursor: pointer;
-  }
-  .Go-button {
-    display: none;
-  }
-  .search-close-button {
-    display: none;
-  }
+    .x-button {
+        background-image: url('https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg');
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 19px;
+        width: 21px;
+        background-size: contain;
+        margin-right: 20px;
+        position: relative;
+        top: 5px;
+        cursor: pointer;
+    }
+    .Go-button {
+        display: none;
+    }
+    .search-close-button {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1020px) {
-  .parent-container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+    .parent-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 @media screen and (min-width: 1020px) {
-  .inner-container {
-    padding: 0 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    height: 70px;
-    margin: 0 auto;
-    max-width: 100rem;
-  }
+    .inner-container {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        height: 70px;
+        margin: 0 auto;
+        max-width: 100rem;
+    }
 }
 
 @media screen and (min-width: 1020px) {
-  .join-now-container {
-    display: none;
-  }
+    .join-now-container {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1020px) {
-  .nav-container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 90px;
-  }
+    .nav-container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 90px;
+    }
 }
 @media screen and (min-width: 1020px) {
-  .search-bar-wrapper {
-    height: 60px;
-    animation: slideIn 1s forwards;
-    padding-bottom: 20px;
-    width: 1500px;
-    z-index: 6000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-    padding-top: 2px;
-  }
-
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
+    .search-bar-wrapper {
+        height: 60px;
+        padding-bottom: 20px;
+        width: 1500px;
+        z-index: 6000;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: white;
+        padding-top: 2px;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-out;
     }
-    100% {
-      transform: translateX(0);
+    .search-bar-wrapper.open {
+        transform: translateX(0);
     }
-  }
-
-  .close-bar-wrapper {
-    height: 80px;
-    animation: slideOut 1s forwards;
-    padding-bottom: 20px;
-    width: 1500px;
-    z-index: 6000;
-    position: absolute;
-    top: 0;
-    right: 500px;
-  }
-
-  @keyframes slideOut {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(200%);
-    }
-  }
 }
 
 .Go-button {
-  background: #c33991;
-  border: none;
-  color: #fff;
-  font-family: din-2014, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 65px;
-  padding: 0 20px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  margin-right: 10px;
+    background: #c33991;
+    border: none;
+    color: #fff;
+    font-family: din-2014, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 65px;
+    padding: 0 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 .Go-button:hover {
-  background-color: rgb(42, 41, 41);
+    background-color: rgb(42, 41, 41);
 }
 
 .search-close-button {
-  cursor: pointer;
-  margin-top: 30px;
-  margin-right: 15px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-right: 15px;
 }
