@@ -83,7 +83,6 @@
         gap: 90px;
     }
 }
-@media screen and (min-width: 1020px) {
     .search-bar-wrapper {
         height: 60px;
         padding-bottom: 20px;
@@ -100,7 +99,6 @@
     .search-bar-wrapper.open {
         transform: translateX(0);
     }
-}
 
 .Go-button {
     background: #c33991;
