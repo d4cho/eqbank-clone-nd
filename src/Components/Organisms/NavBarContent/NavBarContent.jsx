@@ -4,11 +4,11 @@ import Link from '../../Atoms/Link/Link';
 import LeftNavigationBar from '../../Molecules/LeftNavigationBar/LeftNavigationBar';
 import RightNavigationBar from '../../Molecules/RightNavigationBar/RightNavigationBar';
 import { MainContext } from '../../../Context/MainContext';
-import SearchBar from '../../Atoms/SlideInSearchBar/SlideInSearchBar';
 import NavBarDropdownContent from '../../Molecules/NavBarDropDownContent/NavBarDropDownContent';
 import MiniCardsContent from '../../Molecules/MiniCardsContent/MiniCardsContent';
 import SideBarDrawer from '../SideBarDrawer/SideBarDrawer';
 import EQBankLogo from '../../Atoms/EQBankLogo/EQBankLogo';
+import SlideInSearchBar from '../../Molecules/SlideInSearchBar/SlideInSearchBar';
 
 function NavBarContent() {
     const { show, closeShow, toggle, sideBarToggle } = useContext(MainContext);
@@ -69,19 +69,7 @@ function NavBarContent() {
 
                     <EQBankLogo height='49px' width='114px' />
                 </div>
-                <div className={slideInSearchBar}>
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
-                        <SearchBar />
-                        <span className='search-close-button'>
-                            <img
-                                onClick={closeShow}
-                                src='https://www.eqbank.ca/Assets/dist/images/search-close-icon.svg'
-                                alt=''
-                            />
-                        </span>
-                        <button className='Go-button'>Go</button>
-                    </div>
-                </div>
+                <SlideInSearchBar slideInSearchBar={slideInSearchBar} closeShow={closeShow} />
             </div>
             <NavBarDropdownContent />
             <MiniCardsContent />
