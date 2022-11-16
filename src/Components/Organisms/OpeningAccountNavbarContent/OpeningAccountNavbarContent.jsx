@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./OpeningAccountNavbarContent.css";
-import EQBankLogo from "../../Atoms/EQBankLogo/EQBankLogo";
+import Logo from "../../Atoms/Logo/Logo";
 import OpeningAccountNavbar from "../../Molecules/OpeningAccountNavbar/OpeningAccountNavbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -34,7 +34,7 @@ function OpeningAccountNavbarContent() {
           )}
           <nav className='opening-account-navbar-parent'>
               <div className='opening-account-container'>
-                  <EQBankLogo height='39px' width='90px' />
+                  <Logo height='39px' width='90px' />
                   <OpeningAccountNavbar
                       needHelp='Need help?'
                       contactUs='Contact us'
@@ -51,7 +51,7 @@ function OpeningAccountNavbarContent() {
               </div>
 
               <div className='opening-account-container-mobile'>
-                  <EQBankLogo height='39px' width='90px' />
+                  <Logo height='39px' width='90px' />
                   <div style={{ cursor: 'pointer' }} onClick={openCloseMenuToggler}>
                       {openCloseMenu === false ? <MenuIcon /> : <CloseIcon />}
                   </div>

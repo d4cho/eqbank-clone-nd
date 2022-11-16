@@ -1,7 +1,7 @@
 import React from 'react';
-import './EQBankLogo.css';
+import './Logo.css';
 
-function EQBankLogo({ height, width }) {
+function Logo({ height, width }) {
     return (
         <a href='/'>
             <img
@@ -14,4 +14,4 @@ function EQBankLogo({ height, width }) {
     );
 }
 
-export default EQBankLogo;
+export default Logo;
