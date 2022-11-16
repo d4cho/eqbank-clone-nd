@@ -2,7 +2,6 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Components/Views/HomePage';
 import MainContextProvider from './Context/MainContext';
-import Navigation from './Navigation';
 import WelcomePage from './Components/Views/WelcomePage';
 import EmailVerification from './Components/Views/EmailVerification';
 import FormContextProvider from './Context/FormContext';
@@ -18,14 +17,7 @@ function App() {
         <FormContextProvider>
             <MainContextProvider>
                 <Routes>
-                    <Route
-                        path='/'
-                        element={
-                            <Navigation>
-                                <HomePage />{' '}
-                            </Navigation>
-                        }
-                    />
+                    <Route path='/' element={<HomePage />} />
                     <Route path='/welcome' element={<WelcomePage />} />
                     <Route
                         path='/welcome/profile/emailVerification'

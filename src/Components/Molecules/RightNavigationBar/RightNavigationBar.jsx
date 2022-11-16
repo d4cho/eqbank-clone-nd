@@ -2,7 +2,7 @@ import React from 'react';
 import './RightNavigationBar.css';
 
 
-function RightNavigationBar({ image, signIn, lang, button }) {
+function RightNavigationBar({ image, signIn, lang, link }) {
     return (
         <>
             <div className='right-navigation-container'>
@@ -15,7 +15,7 @@ function RightNavigationBar({ image, signIn, lang, button }) {
                 <a className='header-sign-in' href='/'>
                     {signIn}
                 </a>
-                {button}
+                {link}
             </div>
         </>
     );

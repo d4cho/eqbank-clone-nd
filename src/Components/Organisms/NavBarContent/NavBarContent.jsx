@@ -1,33 +1,26 @@
 import React, { useContext } from 'react';
 import './NavBarContent.css';
-import Link from '../../Atoms/Link/Link';
-import LeftNavigationBar from '../../Molecules/LeftNavigationBar/LeftNavigationBar';
-import RightNavigationBar from '../../Molecules/RightNavigationBar/RightNavigationBar';
-import { MainContext } from '../../../Context/MainContext';
-import NavBarDropdownContent from '../../Molecules/NavBarDropDownContent/NavBarDropDownContent';
-import MiniCardsContent from '../../Molecules/MiniCardsContent/MiniCardsContent';
-import SideBarDrawer from '../SideBarDrawer/SideBarDrawer';
-import EQBankLogo from '../../Atoms/EQBankLogo/EQBankLogo';
-import SlideInSearchBar from '../../Molecules/SlideInSearchBar/SlideInSearchBar';
 
-function NavBarContent() {
-    const { show, closeShow, toggle, sideBarToggle } = useContext(MainContext);
-    let slideInSearchBar = 'search-bar-wrapper';
-    if (show) {
-        slideInSearchBar = 'search-bar-wrapper open';
-    }
+import { MainContext } from '../../../Context/MainContext';
+
+function NavBarContent({
+    LeftNavigationBar,
+    RightNavigationBar,
+    NavBarDropdownContent,
+    MiniCardsContent,
+    SideBarDrawer,
+    EQBankLogo,
+    SlideIn,
+    link
+}) {
+    const { toggle, sideBarToggle } = useContext(MainContext);
+  
     return (
         <>
             <div className='parent-container'>
                 <div className='inner-container'>
                     <div className='join-now-container'>
-                        <Link
-                            paddingTop='10px'
-                            paddingBottom='10px'
-                            Label='Join now'
-                            paddingLeft='10px'
-                            paddingRight='10px'
-                        />
+                       {link}
                         <span
                             onClick={sideBarToggle}
                             className={toggle ? 'x-button' : 'menu-button'}
@@ -43,37 +36,17 @@ function NavBarContent() {
                             gap: '80px',
                         }}
                     >
-                        <RightNavigationBar
-                            image={
-                                <img
-                                    className='contact-us-img'
-                                    src='https://www.eqbank.ca/images/default-source/svgs/eqbank_phone-grey.svg?sfvrsn=2ed0b9d3_6'
-                                    alt=''
-                                />
-                            }
-                            lang=' FR'
-                            signIn=' Sign in'
-                            button={
-                                <Link
-                                    paddingTop='10px'
-                                    paddingBottom='10px'
-                                    Label='Join now'
-                                    paddingLeft='10px'
-                                    paddingRight='10px'
-                                    href='/'
-                                />
-                            }
-                        />
-                        <LeftNavigationBar />
+                       {RightNavigationBar}
+                        {LeftNavigationBar}
                     </div>
 
-                    <EQBankLogo height='49px' width='114px' />
+                  {EQBankLogo}
                 </div>
-                <SlideInSearchBar slideInSearchBar={slideInSearchBar} closeShow={closeShow} />
+               {SlideIn}
             </div>
-            <NavBarDropdownContent />
-            <MiniCardsContent />
-            <SideBarDrawer />
+            {NavBarDropdownContent}
+            {MiniCardsContent}
+           {SideBarDrawer}
         </>
     );
 }
