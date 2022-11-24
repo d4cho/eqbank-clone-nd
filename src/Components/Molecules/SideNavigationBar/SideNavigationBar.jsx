@@ -4,7 +4,7 @@ import Link from '../../Atoms/Link/Link';
 import SocialButton from '../../Atoms/SocialLink/SocialLink';
 
 
-function SideNavigationBar({ navInfo}) {
+function SideNavigationBar({ navInfo, backgroundColor, color }) {
     const [clicked, setClicked] = useState('0');
 
     const handleToggle = (index) => {
@@ -81,7 +81,10 @@ function SideNavigationBar({ navInfo}) {
                                                 <li key={id}>
                                                     {name.name}
                                                     {
-                                                        <ul className='inner-sub-list'>
+                                                        <ul
+                                                            className='inner-sub-list'
+                                                            style={{ color: color }}
+                                                        >
                                                             {name.links.map((link, id) => (
                                                                 <div key={id}>
                                                                     <li>{link}</li>
@@ -98,7 +101,7 @@ function SideNavigationBar({ navInfo}) {
                         ))}
                     </ul>
                 </nav>
-                <div className='blocker-content'>
+                <div className='blocker-content' style={{ backgroundColor: backgroundColor }}>
                     <div className='block-content-join-now'>
                         <Link
                             width='11.25rem'
