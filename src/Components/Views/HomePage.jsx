@@ -13,7 +13,7 @@ import { MainContext } from '../../Context/MainContext';
 import Link from '../Atoms/Link/Link';
 
 function HomePage() {
-    const { show, closeShow} = useContext(MainContext);
+    const { show, closeShow, sideBarToggle, toggle } = useContext(MainContext);
     let slideInSearchBar = 'search-bar-wrapper';
     if (show) {
         slideInSearchBar = 'search-bar-wrapper open';
@@ -21,7 +21,12 @@ function HomePage() {
     return (
         <>
             <NavBarContent
-                LeftNavigationBar={<LeftNavigationBar />}
+                hamburgerMenu={
+                    <span onClick={sideBarToggle} className={toggle ? 'x-button' : 'menu-button'}>
+                        <span className='menu-icon' data-parent-container-toggle-icon=''></span>
+                    </span>
+                }
+                LeftNavigationBar={<LeftNavigationBar arrowUp='arrow-up' arrowDown='arrow-down' />}
                 RightNavigationBar={
                     <RightNavigationBar
                         image={

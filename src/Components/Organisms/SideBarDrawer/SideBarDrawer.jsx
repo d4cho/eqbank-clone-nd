@@ -4,6 +4,7 @@ import { MainContext } from "../../../Context/MainContext";
 import SideBarMobileSearchBar from "../../Atoms/SideBarSearchBar/SideBarSearchBar";
 import SideNavigationBar from "../../Molecules/SideNavigationBar/SideNavigationBar";
 import Backdrop from "../Backdrop/Backdrop";
+import { navInfo } from "../../../Data/NavbarLabel";
 
 
 function SideBarDrawer() {
@@ -23,7 +24,7 @@ function SideBarDrawer() {
     <>
       <div className={drawerClass}>
         <SideBarMobileSearchBar />
-        <SideNavigationBar/>
+        <SideNavigationBar navInfo={navInfo} />
         {backDrop}
       </div>
     </>

@@ -4,7 +4,7 @@ import { MainContext } from '../../../Context/MainContext';
 import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 import SearchIcon from '../../Atoms/SearchIcon/SearchIcon';
 
-function LeftNavigationBar() {
+function LeftNavigationBar({arrowUp, arrowDown}) {
     const { menuTitle, setMenuTitle, open, setOpen } = useContext(MainContext);
 
     const { handleShow, handleMouseEnter, handleMouseLeave, isHover } = useContext(MainContext);
@@ -49,8 +49,8 @@ function LeftNavigationBar() {
                                             <span
                                                 className={
                                                     open && menuTitle === leftNavItem
-                                                        ? 'arrow-up'
-                                                        : 'arrow-down'
+                                                        ? arrowUp
+                                                        : arrowDown
                                                 }
                                             />
                                         )}

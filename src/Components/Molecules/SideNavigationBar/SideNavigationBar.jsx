@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './SideNavigationBar.css';
 import Link from '../../Atoms/Link/Link';
 import SocialButton from '../../Atoms/SocialLink/SocialLink';
-import { navInfo } from '../../../Data/NavbarLabel';
 
-function SideNavigationBar() {
+
+function SideNavigationBar({ navInfo}) {
     const [clicked, setClicked] = useState('0');
 
     const handleToggle = (index) => {

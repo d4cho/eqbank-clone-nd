@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './NavBarContent.css';
 
-import { MainContext } from '../../../Context/MainContext';
 
 function NavBarContent({
     LeftNavigationBar,
@@ -11,22 +10,17 @@ function NavBarContent({
     SideBarDrawer,
     EQBankLogo,
     SlideIn,
-    link
+    link,
+    hamburgerMenu,
 }) {
-    const { toggle, sideBarToggle } = useContext(MainContext);
-  
+
     return (
         <>
             <div className='parent-container'>
                 <div className='inner-container'>
                     <div className='join-now-container'>
-                       {link}
-                        <span
-                            onClick={sideBarToggle}
-                            className={toggle ? 'x-button' : 'menu-button'}
-                        >
-                            <span className='menu-icon' data-parent-container-toggle-icon=''></span>
-                        </span>
+                        {link}
+                      {hamburgerMenu}
                     </div>
 
                     <div
@@ -36,17 +30,17 @@ function NavBarContent({
                             gap: '80px',
                         }}
                     >
-                       {RightNavigationBar}
+                        {RightNavigationBar}
                         {LeftNavigationBar}
                     </div>
 
-                  {EQBankLogo}
+                    {EQBankLogo}
                 </div>
-               {SlideIn}
+                {SlideIn}
             </div>
             {NavBarDropdownContent}
             {MiniCardsContent}
-           {SideBarDrawer}
+            {SideBarDrawer}
         </>
     );
 }
