@@ -11,12 +11,21 @@ function MainContextProvider(props) {
     const [activeStep, setActiveStep] = useState(0);
     const [subMenuTitle, setSubMenuTitle] = useState('Everyday Banking');
     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
+    const [isHover, setIsHover] = useState(false);
 
     useEffect(() => {
         window
             .matchMedia('(min-width: 1020px)')
             .addEventListener('change', (e) => setMatches(e.matches));
     }, []);
+
+      const handleMouseEnter = () => {
+          setIsHover(true);
+      };
+
+      const handleMouseLeave = () => {
+          setIsHover(false);
+      };
 
     const nextStep = () => {
         if (activeStep < 2) {
@@ -58,6 +67,9 @@ function MainContextProvider(props) {
                 subMenuTitle,
                 setSubMenuTitle,
                 matches,
+                isHover,
+                handleMouseEnter,
+                handleMouseLeave,
             }}
         >
             {props.children}

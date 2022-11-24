@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './SideNavigationBar.css';
 import Link from '../../Atoms/Link/Link';
 import SocialButton from '../../Atoms/SocialLink/SocialLink';
-import { navInfo } from '../../../Data/NavbarLabel';
 
-function SideNavigationBar() {
+
+function SideNavigationBar({ navInfo, backgroundColor, color }) {
     const [clicked, setClicked] = useState('0');
 
     const handleToggle = (index) => {
@@ -81,7 +81,10 @@ function SideNavigationBar() {
                                                 <li key={id}>
                                                     {name.name}
                                                     {
-                                                        <ul className='inner-sub-list'>
+                                                        <ul
+                                                            className='inner-sub-list'
+                                                            style={{ color: color }}
+                                                        >
                                                             {name.links.map((link, id) => (
                                                                 <div key={id}>
                                                                     <li>{link}</li>
@@ -98,7 +101,7 @@ function SideNavigationBar() {
                         ))}
                     </ul>
                 </nav>
-                <div className='blocker-content'>
+                <div className='blocker-content' style={{ backgroundColor: backgroundColor }}>
                     <div className='block-content-join-now'>
                         <Link
                             width='11.25rem'

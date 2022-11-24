@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import './LeftNavigationBar.css';
 import { MainContext } from '../../../Context/MainContext';
 import { leftNavbarLabels } from '../../../Data/NavbarLabel';
-function LeftNavigationBar() {
+import SearchIcon from '../../Atoms/SearchIcon/SearchIcon';
+
+function LeftNavigationBar({arrowUp, arrowDown}) {
     const { menuTitle, setMenuTitle, open, setOpen } = useContext(MainContext);
 
-    const { handleShow } = useContext(MainContext);
+    const { handleShow, handleMouseEnter, handleMouseLeave, isHover } = useContext(MainContext);
 
     const leftNavBarSwitchLabel = (menuTitle) => {
         switch (menuTitle) {
@@ -47,8 +49,8 @@ function LeftNavigationBar() {
                                             <span
                                                 className={
                                                     open && menuTitle === leftNavItem
-                                                        ? 'arrow-up'
-                                                        : 'arrow-down'
+                                                        ? arrowUp
+                                                        : arrowDown
                                                 }
                                             />
                                         )}
@@ -64,9 +66,13 @@ function LeftNavigationBar() {
                         ))}
                         <li onClick={handleShow} className='search-button'>
                             {' '}
-                            <span className='search-link'>
-                                <span className='search-icon'></span>
-                            </span>
+                            <SearchIcon
+                                handleMouseEnter={handleMouseEnter}
+                                handleMouseLeave={handleMouseLeave}
+                                isHover={isHover}
+                                backGroundColor='lightgrey'
+                                borderRadius='2px'
+                            />
                         </li>
                     </ul>
                 </nav>
