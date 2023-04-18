@@ -36,7 +36,7 @@ function WelcomePage() {
         setToggle(!toggle);
     };
 
-    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
 
     const handleSubmit = (event) => {
         event.preventDefault();
